@@ -28,8 +28,8 @@ public class SceneGameManager : MonoBehaviour
     [SerializeField]
     private List<GameObject> sceneGames = new List<GameObject>();
 
-    public void Load() { 
-    
+    public void Load() {
+        sceneGames[sceneID].GetComponent<SceneGameBase>().StartPlay();
     }
 
     public void MoveOn()
@@ -45,7 +45,7 @@ public class SceneGameManager : MonoBehaviour
         return sceneID;
     }
 
-    public void SetCurrentGameID(int id)
+    public void SetCurrentSceneID(int id)
     {
         sceneID = id;
     }

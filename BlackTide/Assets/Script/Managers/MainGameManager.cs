@@ -33,14 +33,20 @@ public class MainGameManager : MonoBehaviour
     public void LoadGame() {
         if (currentState == GameState.Dialog)
         {
+            UIManager.GetInstance().ShowDialogPanel();
+            UIManager.GetInstance().CloseMiniGamePanel();
             DialogManager.GetInstance().NextDialog();
         }
         else if (currentState == GameState.MiniGame)
         {
-
+            UIManager.GetInstance().ShowMiniGamePanel();
+            UIManager.GetInstance().CloseDialogPanel();
+            MiniGameManager.GetInstance().LoadGame();
         }
         else if (currentState == GameState.SceneGame) {
             SceneGameManager.GetInstance().Load();
+            UIManager.GetInstance().CloseDialogPanel();
+            UIManager.GetInstance().CloseMiniGamePanel();
             UIManager.GetInstance().ShowSceneGamePanel();
         }
     }
@@ -87,4 +93,13 @@ public class MainGameManager : MonoBehaviour
         currentState = (GameState)state;
     }
 
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SaveManager.GetInstance().Save();
+            UIManager.GetInstance().ShowMainMenu();
+        }
+    }
 }

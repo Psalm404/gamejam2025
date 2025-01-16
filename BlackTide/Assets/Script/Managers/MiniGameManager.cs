@@ -47,6 +47,10 @@ public class MiniGameManager : MonoBehaviour
         }
     }
 
+    public void LoadGame()
+    {
+        //
+    }
 
     private void OnMiniGameFinished()
     {

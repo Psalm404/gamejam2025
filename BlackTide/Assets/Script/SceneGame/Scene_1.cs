@@ -11,26 +11,20 @@ public class Scene_1 : SceneGameBase
     Animator phoneAni;
 
     [SerializeField]
-    GameObject FullScreen;
+    GameObject View1;
     [SerializeField]
-    GameObject LeftSide;
-    [SerializeField]
-    GameObject RightSide;
+    GameObject View2;
 
-
-
-    private void Start()
-    {
-        FullScreen.SetActive(true);
-        LeftSide.SetActive(false);
-        RightSide.SetActive(false);
+    public override void StartPlay() {
+        UIManager.GetInstance().CurtainAnimation("FadeOut");
+        View1.SetActive(true);
+        View2.SetActive(false);
     }
 
     public void OnBottleCoverClick() {
         bottleCoverAni.SetTrigger("Click");
         //AudioManager.GetInstance().xxx.play();
-        LeftSide.SetActive(true);
-        RightSide.SetActive(true);
+        View2.SetActive(true);
         OnScreenSeparate();
     }
 
@@ -42,7 +36,6 @@ public class Scene_1 : SceneGameBase
     public void OnPhoneClick()
     {
         phoneAni.gameObject.SetActive(false);
-        LeftSide.GetComponent<Image>().sprite = Resources.Load<Sprite>("TempForTest/d1");
         MainGameManager.GetInstance().StartDialogSequence(0);
     }
 
@@ -69,14 +62,12 @@ public class Scene_1 : SceneGameBase
         {
             elapsed += Time.deltaTime;
             float t = elapsed / duration;
-            LeftSide.GetComponent<Image>().color = new Color(1, 1, 1, Mathf.Lerp(0, 1, t));
-            RightSide.GetComponent<Image>().color = new Color(1, 1, 1, Mathf.Lerp(0, 1, t));
+            View2.GetComponent<Image>().color = new Color(1, 1, 1, Mathf.Lerp(0, 1, t));
             phoneAni.gameObject.GetComponent<Image>().color = new Color(1, 1, 1, Mathf.Lerp(0, 1, t));
             yield return null;
         }
 
-        LeftSide.GetComponent<Image>().color = new Color(1, 1, 1, 1);
-        RightSide.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+        View2.GetComponent<Image>().color = new Color(1, 1, 1, 1);
         phoneAni.gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 1);
         PhoneCall();
     }

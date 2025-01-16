@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class SceneGameBase : MonoBehaviour
 {
-   
+    public virtual void StartPlay()
+    { 
+    }
+
 }
