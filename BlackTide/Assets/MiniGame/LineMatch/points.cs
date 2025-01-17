@@ -12,16 +12,20 @@ public class ui_thread : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoin
 
     public List<GameObject> games = new List<GameObject>();
 
-    //测试起点位置
+    // 测试起点位置
     public RectTransform start;
 
-    //手指或鼠标在屏幕上的点击位置
+    // 手指或鼠标在屏幕上的点击位置
     private Vector3 touchPos;
 
     private bool isPress = false;
 
     // MiniGamePanel 的 GameObject
     public GameObject miniGamePanel;
+
+
+    // 所需的正确顺序点列表
+    public List<GameObject> requiredOrder = new List<GameObject>();
 
     // 检测是否在 MiniGamePanel 的子组件内
     private bool IsInMiniGamePanel(GameObject target)
@@ -104,6 +108,7 @@ public class ui_thread : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoin
         if (eventData.pointerEnter != null && IsInMiniGamePanel(eventData.pointerEnter))
         {
             start = (RectTransform)eventData.pointerEnter.transform;
+         //   correctOrder.Add(eventData.pointerEnter);
         }
     }
 
@@ -174,9 +179,29 @@ public class ui_thread : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoin
 
                     SetLine((RectTransform)game.transform, start.position, eventData.pointerEnter.transform.position);
 
+
                     games.Add(game);
 
+                    Debug.Log(games.Count +" "+ requiredOrder.Count);
+                    int correctCount = 0;
+                    if (games.Count == requiredOrder.Count-1) {
+                        for (int i = 0; i < games.Count; i++) {
+                
+                            if (games[i].name == requiredOrder[i].name + "cs") {
+                                Debug.Log(i + " " + games[i].name + " " +  requiredOrder[i].name);
+                              
+                                correctCount++;
+                                Debug.Log(correctCount);
+                            }
+                        }
+                        
+                    }
+                    if (correctCount == requiredOrder.Count - 1) {
+                        Debug.Log("success!");
+                    }
                     start = (RectTransform)eventData.pointerEnter.transform;
+
+                 
                 }
             }
         }
