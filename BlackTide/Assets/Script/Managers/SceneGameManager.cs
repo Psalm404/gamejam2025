@@ -36,7 +36,9 @@ public class SceneGameManager : MonoBehaviour
     {
         sceneGames[sceneID].SetActive(false);
         sceneID++;
-        sceneGames[sceneID].SetActive(true);
+        if (sceneID < sceneGames.Count) {
+            sceneGames[sceneID].SetActive(true);
+        }
     }
 
     //todo

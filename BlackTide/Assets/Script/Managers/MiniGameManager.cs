@@ -28,7 +28,7 @@ public class MiniGameManager : MonoBehaviour
     private int currentGameID = 0;
     private MiniGamePanel currentMiniGame;
     [SerializeField]
-    private List<GameObject> miniGamePanelPrefab;
+    private List<GameObject> miniGamePanelPrefab = new List<GameObject>();
 
     public void StartMiniGame()
     {
@@ -37,9 +37,14 @@ public class MiniGameManager : MonoBehaviour
             currentMiniGame.gameEnded -= OnMiniGameFinished;
             Destroy(currentMiniGame.gameObject);
         }
-
-        GameObject miniGamePanel = Instantiate(miniGamePanelPrefab[currentGameID]);
-        currentMiniGame = miniGamePanel.GetComponent<MiniGamePanel>();
+        if (currentGameID < miniGamePanelPrefab.Count)
+        {
+            GameObject miniGamePanel = Instantiate(miniGamePanelPrefab[currentGameID]);
+            currentMiniGame = miniGamePanel.GetComponent<MiniGamePanel>();
+        }
+        else {
+            MainGameManager.GetInstance().SwitchState(GameState.SceneGame);
+        }
 
         if (currentMiniGame != null)
         {
