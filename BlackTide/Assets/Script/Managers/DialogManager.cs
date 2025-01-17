@@ -77,9 +77,9 @@ public class DialogSequence //中间没有任何其他交互的一组对话
     }
 
     public Dialog GetNextDialog() {
+        current++;
         if (current < dialogs.Count)
         {
-            current++;
             return dialogs[current];
         }
         else {
@@ -136,6 +136,16 @@ public class DialogSplit : Dialog
         this.dialogBackground = dialogBackground;
     }
 
+    public DialogSplit(string characterName, string dialogText,
+       string characterNameRight, string dialogTextRight)
+    {
+        this.characterName = characterName;
+        this.dialogText = dialogText;
+        this.characterNameRight = characterNameRight;
+        this.dialogTextRight = dialogTextRight;
+        this.dialogBackground = 0;
+    }
+
     public string GetCharacterNameRight()
     {
         return characterNameRight;
@@ -180,8 +190,11 @@ public class DialogManager : MonoBehaviour
     private Dictionary<int, DialogSequence> dialogSequences = new Dictionary<int, DialogSequence>();//所有对话序列
 
     private DialogSequence currentDialogSequence;//当前对话序列
+    [SerializeField]
     private int currentSequenceID;
     private int currentDialogSequenceSize;//当前对话序列有几组对话
+
+    [SerializeField]
     private int nextDialogSequenceID;//当前对话序列结束后的下一组对话序列（也可不用，直接指定特定对话编号也可以跳过去）
 
 
@@ -203,7 +216,10 @@ public class DialogManager : MonoBehaviour
         currentSequenceID = dialogSequenceID;
         currentDialogSequence = dialogSequences[dialogSequenceID];
         currentDialogSequenceSize = currentDialogSequence.GetSize();
-        nextDialogSequenceID = currentDialogSequence.GetNextSequenceID();
+        if (currentDialogSequence.GetNextSequenceID() != -1)
+        {
+            nextDialogSequenceID = currentDialogSequence.GetNextSequenceID();
+        }
         NextDialog();
     }
 
@@ -214,7 +230,9 @@ public class DialogManager : MonoBehaviour
             currentSequenceID = nextDialogSequenceID;
             currentDialogSequence = dialogSequences[nextDialogSequenceID];
             currentDialogSequenceSize = currentDialogSequence.GetSize();
-            nextDialogSequenceID = currentDialogSequence.GetNextSequenceID();
+            if (currentDialogSequence.GetNextSequenceID() != -1) {
+                nextDialogSequenceID = currentDialogSequence.GetNextSequenceID();
+            }
             NextDialog();
         }
     }
