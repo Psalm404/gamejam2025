@@ -177,7 +177,7 @@ public class DialogManager : MonoBehaviour
     [SerializeField]
     private DialogSplitUI dialogSplitUI;
 
-    private List<DialogSequence> dialogSequences = new List<DialogSequence>();//所有对话序列
+    private Dictionary<int, DialogSequence> dialogSequences = new Dictionary<int, DialogSequence>();//所有对话序列
 
     private DialogSequence currentDialogSequence;//当前对话序列
     private int currentSequenceID;
@@ -193,7 +193,9 @@ public class DialogManager : MonoBehaviour
     private void InitDialogs() {
         //For test
         StoryData.Init();
-        dialogSequences = StoryData.dialogSequences;
+        foreach (DialogSequence d in StoryData.dialogSequences) {
+            dialogSequences.Add(d.GetSequenceID(), d);
+        }
     }
 
     public void PlayDialogSequence(int dialogSequenceID) {
@@ -207,12 +209,14 @@ public class DialogManager : MonoBehaviour
 
     public void PlayNextDialogSequence()
     {
-        currentDialogIndex = 0;
-        currentSequenceID = nextDialogSequenceID;
-        currentDialogSequence = dialogSequences[nextDialogSequenceID];
-        currentDialogSequenceSize = currentDialogSequence.GetSize();
-        nextDialogSequenceID = currentDialogSequence.GetNextSequenceID();
-        NextDialog();
+        if (dialogSequences.ContainsKey(nextDialogSequenceID)) {
+            currentDialogIndex = 0;
+            currentSequenceID = nextDialogSequenceID;
+            currentDialogSequence = dialogSequences[nextDialogSequenceID];
+            currentDialogSequenceSize = currentDialogSequence.GetSize();
+            nextDialogSequenceID = currentDialogSequence.GetNextSequenceID();
+            NextDialog();
+        }
     }
 
     public void NextDialog()
