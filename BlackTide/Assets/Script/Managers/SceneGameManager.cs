@@ -29,6 +29,8 @@ public class SceneGameManager : MonoBehaviour
     private List<GameObject> sceneGames = new List<GameObject>();
 
     public void Load() {
+        sceneGames[0].SetActive(false);
+        sceneGames[sceneID].SetActive(true);
         sceneGames[sceneID].GetComponent<SceneGameBase>().StartPlay();
     }
 
@@ -38,7 +40,12 @@ public class SceneGameManager : MonoBehaviour
         sceneID++;
         if (sceneID < sceneGames.Count) {
             sceneGames[sceneID].SetActive(true);
+            sceneGames[sceneID].GetComponent<SceneGameBase>().StartPlay();
         }
+    }
+
+    public void StayCurrent() {
+        sceneGames[sceneID].GetComponent<SceneGameBase>().StartPlay();
     }
 
     //todo

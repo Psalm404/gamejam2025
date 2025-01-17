@@ -4279,6 +4279,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogUI: {fileID: 778326164}
   dialogSplitUI: {fileID: 0}
+  currentSequenceID: 0
+  nextDialogSequenceID: 0
   isInSplitDialog: 0
 --- !u!114 &2127185691
 MonoBehaviour:
@@ -4526,6 +4528,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -3.0717
       objectReference: {fileID: 0}
+    - target: {fileID: 7315315184584558103, guid: 04e200b05601809459ec79c6976fff13, type: 3}
+      propertyPath: screenOverlay
+      value: 
+      objectReference: {fileID: 7977945919391767051}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

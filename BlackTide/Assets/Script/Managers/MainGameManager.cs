@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public enum GameState { SceneGame, Dialog, MiniGame, Animation }
+public enum GameState { SceneGame, Dialog, MiniGame, Animation, LastSceneGame }
 public class MainGameManager : MonoBehaviour
 {
     private static MainGameManager Instance;
@@ -75,11 +75,20 @@ public class MainGameManager : MonoBehaviour
             UIManager.GetInstance().CloseMiniGamePanel();
             SceneGameManager.GetInstance().MoveOn();
         }
+        else if (state == GameState.LastSceneGame)
+        {
+            currentState = GameState.SceneGame;
+            UIManager.GetInstance().CloseDialogPanel();
+            UIManager.GetInstance().CloseMiniGamePanel();
+            SceneGameManager.GetInstance().StayCurrent();
+        }
     }
 
     public void StartDialogSequence(int dialogSequenceID)
     {
+        currentState = GameState.Dialog;
         UIManager.GetInstance().ShowDialogPanel();
+        UIManager.GetInstance().CloseMiniGamePanel();
         DialogManager.GetInstance().PlayDialogSequence(dialogSequenceID);
     }
 
