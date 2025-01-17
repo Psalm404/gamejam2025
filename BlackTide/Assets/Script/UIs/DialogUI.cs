@@ -3,18 +3,22 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogUI : MonoBehaviour
 {
     [SerializeField]
-    private TMP_Text name;
+    private TMP_Text characterName;
     [SerializeField]
     private TMP_Text dialog;
+    [SerializeField]
+    private Image background;
 
-    public void SetDialog(string characterName, string dialogText)
+    public void SetDialog(string characterName, string dialogText, int backgroundSpriteID)
     {
-        name.text = characterName;
+        this.characterName.text = characterName;
         dialog.text = dialogText;
+        background.sprite = Resources.Load<Sprite>("Background/" + backgroundSpriteID);
     }
 
     public void OnClick() {

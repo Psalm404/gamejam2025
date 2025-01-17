@@ -32,12 +32,14 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private GameObject DialogUI;
     [SerializeField]
+    private GameObject DialogSplitUI;
+    [SerializeField]
     private GameObject SceneGameUI;
-
+    [SerializeField]
+    private GameObject Curtain;
 
     private void Start()
     {
-        CloseAll();
         ShowMainMenu();
     }
 
@@ -45,10 +47,13 @@ public class UIManager : MonoBehaviour
         MainMenuUI.SetActive(false);
         MiniGameUI.SetActive(false);
         DialogUI.SetActive(false);
+        DialogSplitUI.SetActive(false);
         SceneGameUI.SetActive(false);
+        Curtain.SetActive(false);
     }
 
     public void ShowMainMenu() {
+        CloseAll();
         MainMenuUI.SetActive(true);
     }
 
@@ -58,12 +63,25 @@ public class UIManager : MonoBehaviour
     }
 
     public void ShowDialogPanel() {
-        DialogUI.SetActive(true);
+        if (DialogManager.GetInstance().isInSplitDialog)
+        {
+            DialogSplitUI.SetActive(true);
+        }
+        else
+        {
+            DialogUI.SetActive(true);
+        }
     }
 
     public void CloseDialogPanel()
     {
-        DialogUI.SetActive(false);
+        if (DialogManager.GetInstance().isInSplitDialog)
+        {
+            DialogSplitUI.SetActive(false);
+        }
+        else {
+            DialogUI.SetActive(false);
+        }
     }
 
     public void ShowMiniGamePanel()
@@ -84,5 +102,12 @@ public class UIManager : MonoBehaviour
     public void CloseSceneGamePanel()
     {
         SceneGameUI.SetActive(false);
+    }
+
+
+    public void CurtainAnimation(string animationType)
+    {
+        Curtain.SetActive(true);
+        Curtain.GetComponent<Animator>().SetTrigger(animationType);
     }
 }

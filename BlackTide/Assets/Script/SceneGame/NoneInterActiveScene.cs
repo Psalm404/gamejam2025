@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NoneInterActiveScene : MonoBehaviour
+public class NoneInteractiveScene : SceneGameBase
 {
     public GameState nextState;
 
