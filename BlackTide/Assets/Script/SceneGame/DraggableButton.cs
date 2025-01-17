@@ -9,7 +9,8 @@ public class DraggableButton : MonoBehaviour, IPointerDownHandler, IDragHandler,
     private Vector2 originalPosition;
     private Vector2 offset;
     public RectTransform targetArea; // 目标区域
-    public float snapThreshold = 400f; // 判断到达目标区域的阈值
+
+    public float snapThreshold = 100f; // 判断到达目标区域的阈值
 
     public Camera cam;
 
@@ -17,7 +18,7 @@ public class DraggableButton : MonoBehaviour, IPointerDownHandler, IDragHandler,
     {
         rectTransform = GetComponent<RectTransform>();
         originalPosition = rectTransform.anchoredPosition;
-        cam = GameObject.Find("MainCamera").GetComponent<Camera>();
+        cam = GameObject.Find("Main Camera").GetComponent<Camera>();
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -38,20 +39,18 @@ public class DraggableButton : MonoBehaviour, IPointerDownHandler, IDragHandler,
     {
         if (targetArea != null)
         {
-            Vector2 distanceToTarget = RectTransformUtility.WorldToScreenPoint(cam, rectTransform.position)
-                - RectTransformUtility.WorldToScreenPoint(cam, targetArea.position);
-            Debug.Log(RectTransformUtility.WorldToScreenPoint(cam, rectTransform.position));
-            Debug.Log(RectTransformUtility.WorldToScreenPoint(cam, targetArea.position));
-            // Vector2 distanceToTarget = rectTransform.anchoredPosition - targetArea.anchoredPosition;
+            Vector2 distanceToTarget;
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(targetArea, eventData.position, eventData.pressEventCamera, out distanceToTarget);
+           
             if (Mathf.Abs(distanceToTarget.x) < snapThreshold && Mathf.Abs(distanceToTarget.y) < snapThreshold)
             {
                 // 到达目标位置，触发事件
                 Debug.Log("Button snapped to target position.");
                 // 你可以在这里调用其他事件或方法
+                MainGameManager.GetInstance().SwitchState(GameState.SceneGame);
             }
             else
             {
-                // 未到达目标位置，返回原始位置
                 rectTransform.anchoredPosition = originalPosition;
             }
         }

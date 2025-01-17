@@ -67,7 +67,7 @@ public static class StoryData
         s11.AddDialog(new Dialog("小夫", "快压下去……"));
         dialogSequences.Add(s11);
 
-        DialogSequence s12 = new DialogSequence(11, 12, GameState.MiniGame);
+        DialogSequence s12 = new DialogSequence(11, 20, GameState.MiniGame);//todo:20要改
         s12.AddDialog(new Dialog("小夫", "(闭眼）还是……压不住啊……"));
         dialogSequences.Add(s12);
 
@@ -81,7 +81,7 @@ public static class StoryData
         p1.AddDialog(new Dialog("小日", "你也是历史学院来的吗 ?"));
         dialogSequences.Add(p1);
 
-        DialogSequence p2 = new DialogSequence(20, 21, GameState.SceneGame);
+        DialogSequence p2 = new DialogSequence(21, 22, GameState.SceneGame);
         p2.AddDialog(new Dialog("小夫", "啊没有没有……我是理工科转来的，对历史感兴趣而已啦。"));
         p2.AddDialog(new Dialog("小日", "我就是感觉没见过你嘛。"));
         p2.AddDialog(new Dialog("小日", "还是第一次在班里遇到和我一样做历史的呢。"));
@@ -94,6 +94,18 @@ public static class StoryData
         p2.AddDialog(new Dialog("小日", "你有《古籍概要》吗 ?"));
         p2.AddDialog(new Dialog("小夫", "啊我买了……"));
         dialogSequences.Add(p2);
+
+        DialogSequence p3 = new DialogSequence(22, 23, GameState.MiniGame);
+        p3.AddDialog(new Dialog("小夫", "还挺新的，看不太明白...."));
+        p3.AddDialog(new Dialog("小日", "没关系的，你有这个补课的意识就真的很超前了。"));
+        p3.AddDialog(new Dialog("小日", "如果你不嫌弃的话，我之前曾经看过配套的网课，记了一些笔记，可以供你参考。"));
+        dialogSequences.Add(p3);
+
+        DialogSequence p4 = new DialogSequence(23, 24, GameState.SceneGame);
+        p4.AddDialog(new Dialog("小夫", "啊太谢谢了，你的字真漂亮……"));
+        p4.AddDialog(new Dialog("小日", "不客气哦，以后多交流。"));
+        p4.AddDialog(new Dialog("小日", "嗯嗯……"));
+        dialogSequences.Add(p4);
     }
 }
 

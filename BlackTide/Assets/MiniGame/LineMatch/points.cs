@@ -182,13 +182,13 @@ public class ui_thread : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoin
 
                     games.Add(game);
 
-                    Debug.Log(games.Count +" "+ requiredOrder.Count);
+                    //  Debug.Log(games.Count +" "+ requiredOrder.Count);
                     int correctCount = 0;
                     if (games.Count == requiredOrder.Count-1) {
                         for (int i = 0; i < games.Count; i++) {
                 
                             if (games[i].name == requiredOrder[i].name + "cs") {
-                                Debug.Log(i + " " + games[i].name + " " +  requiredOrder[i].name);
+                              //  Debug.Log(i + " " + games[i].name + " " +  requiredOrder[i].name);
                               
                                 correctCount++;
                                 Debug.Log(correctCount);
@@ -197,7 +197,11 @@ public class ui_thread : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoin
                         
                     }
                     if (correctCount == requiredOrder.Count - 1) {
-                        Debug.Log("success!");
+
+                        // 游戏结束
+                        MiniGameManager.GetInstance().FinishMinigame("LineMatch");
+        
+                       
                     }
                     start = (RectTransform)eventData.pointerEnter.transform;
 
@@ -209,7 +213,7 @@ public class ui_thread : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoin
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        // 逻辑保持不变
+      
     }
 
     public void OnEndDrag(PointerEventData eventData)

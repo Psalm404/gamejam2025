@@ -8,5 +8,6 @@ public class NoneInteractiveScene : SceneGameBase
 
     public void OnClick() {
         MainGameManager.GetInstance().SwitchState(nextState);
+
     }
 }

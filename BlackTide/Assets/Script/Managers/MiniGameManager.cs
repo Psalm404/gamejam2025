@@ -18,6 +18,8 @@ public class MiniGameManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
+
+       
     }
     public static MiniGameManager GetInstance()
     {
@@ -29,24 +31,40 @@ public class MiniGameManager : MonoBehaviour
     private MiniGamePanel currentMiniGame;
     [SerializeField]
     private List<GameObject> miniGamePanelPrefab = new List<GameObject>();
+    [SerializeField]
+    private List<GameObject> miniGames = new List<GameObject>();
 
     public void StartMiniGame()
+
     {
+        Debug.Log("startminigame");
+
         if (currentMiniGame != null)
         {
             currentMiniGame.gameEnded -= OnMiniGameFinished;
             Destroy(currentMiniGame.gameObject);
         }
-        /*
+       
         if (currentGameID < miniGamePanelPrefab.Count)
         {
-            GameObject miniGamePanel = Instantiate(miniGamePanelPrefab[currentGameID]);
-            currentMiniGame = miniGamePanel.GetComponent<MiniGamePanel>();
+            // GameObject miniGamePanel = Instantiate(miniGamePanelPrefab[currentGameID]);
+            // currentMiniGame = miniGamePanel.GetComponent<MiniGamePanel>();
+
+            GameObject minigame = miniGames[currentGameID];
+            if (minigame != null)
+            {
+                Debug.Log("findminigame" + minigame.name);
+                minigame.SetActive(true);
+            }
+            else
+            {
+                Debug.LogWarning("minigame object not found in the scene.");
+            }
         }
         else {
             MainGameManager.GetInstance().SwitchState(GameState.SceneGame);
         }
-        */
+        
         Debug.Log(currentGameID);
       //  GameObject miniGamePanel = Instantiate(miniGamePanelPrefab[currentGameID]);
       //  currentMiniGame = miniGamePanel.GetComponent<MiniGamePanel>();
@@ -69,6 +87,8 @@ public class MiniGameManager : MonoBehaviour
         Destroy(currentMiniGame.gameObject);
         currentMiniGame = null;
         currentGameID++;
+
+
     }
 
 
@@ -80,5 +100,24 @@ public class MiniGameManager : MonoBehaviour
     public void SetCurrentGameID(int id)
     {
         currentGameID = id;
+    }
+
+    public void FinishMinigame(string minigameName) {
+       
+       
+        GameObject minigame = miniGames[currentGameID];
+        Debug.Log(minigame.name + "isfinished");
+        if (minigame != null)
+        {
+            minigame.SetActive(false);
+            currentGameID++;
+        }
+        else
+        {
+            Debug.LogWarning("minigame object not found in the scene." + minigameName);
+        }
+
+        MainGameManager.GetInstance().SwitchState(GameState.SceneGame);
+
     }
 }
