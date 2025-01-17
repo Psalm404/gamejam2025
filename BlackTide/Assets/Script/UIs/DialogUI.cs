@@ -18,7 +18,15 @@ public class DialogUI : MonoBehaviour
     {
         this.characterName.text = characterName;
         dialog.text = dialogText;
-        background.sprite = Resources.Load<Sprite>("Background/" + backgroundSpriteID);
+        if (backgroundSpriteID == 0)
+        {
+            background.color = new Color(1, 1, 1, 0);
+        }
+        else {
+            background.color = new Color(1,1,1,1);
+            background.sprite = Resources.Load<Sprite>("Background/" + backgroundSpriteID);
+        }
+        
     }
 
     public void OnClick() {

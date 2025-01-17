@@ -100,6 +100,13 @@ public class Dialog {
         this.dialogBackground = dialogBackground;
     }
 
+    public Dialog(string characterName, string dialogText)
+    {
+        this.characterName = characterName;
+        this.dialogText = dialogText;
+        this.dialogBackground = 0;
+    }
+
     public string GetCharacterName() {
         return characterName;
     }
@@ -185,18 +192,8 @@ public class DialogManager : MonoBehaviour
     //可另存一个json文件专门配置剧情
     private void InitDialogs() {
         //For test
-        DialogSequence s1 = new DialogSequence(0,1, GameState.SceneGame);
-        s1.AddDialog(new Dialog("小夫", "嗯、嗯，您放心，我明天的东西都准备好了。",3));
-        s1.AddDialog(new Dialog("小夫", "肯定会有很好的呈现的。", 3));
-        s1.AddDialog(new Dialog("小夫", "辛苦您这么晚了还打电话来问候，您快休息。", 3));
-        s1.AddDialog(new Dialog("小夫", "哈……哈，好的，我一定注意身体。", 3));
-        dialogSequences.Add(s1);
-
-        DialogSequence s2 = new DialogSequence(1, 2, GameState.SceneGame);
-        s2.AddDialog(new Dialog("小夫", "刚想喝点麻醉一下……", 4));
-        s2.AddDialog(new Dialog("小夫", "我哪知道该做什么……", 4));
-        s2.AddDialog(new Dialog("小夫", "拿往年的套话拼一拼呗……", 4));
-        dialogSequences.Add(s2);
+        StoryData.Init();
+        dialogSequences = StoryData.dialogSequences;
     }
 
     public void PlayDialogSequence(int dialogSequenceID) {
