@@ -47,9 +47,6 @@ public class MiniGameManager : MonoBehaviour
        
         if (currentGameID < miniGamePanelPrefab.Count)
         {
-            // GameObject miniGamePanel = Instantiate(miniGamePanelPrefab[currentGameID]);
-            // currentMiniGame = miniGamePanel.GetComponent<MiniGamePanel>();
-
             GameObject minigame = miniGames[currentGameID];
             if (minigame != null)
             {
@@ -66,8 +63,6 @@ public class MiniGameManager : MonoBehaviour
         }
         
         Debug.Log(currentGameID);
-      //  GameObject miniGamePanel = Instantiate(miniGamePanelPrefab[currentGameID]);
-      //  currentMiniGame = miniGamePanel.GetComponent<MiniGamePanel>();
 
 
         if (currentMiniGame != null)
@@ -120,4 +115,5 @@ public class MiniGameManager : MonoBehaviour
         MainGameManager.GetInstance().SwitchState(GameState.SceneGame);
 
     }
+
 }

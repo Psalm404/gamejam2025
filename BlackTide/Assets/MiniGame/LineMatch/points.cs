@@ -12,6 +12,12 @@ public class ui_thread : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoin
 
     public List<GameObject> games = new List<GameObject>();
 
+    [SerializeField]
+    private CanvasGroup pointsCanvasGroup;
+
+    [SerializeField]
+    private CanvasGroup buildingsCanvasGroup;
+
     // 测试起点位置
     public RectTransform start;
 
@@ -22,6 +28,8 @@ public class ui_thread : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoin
 
     // MiniGamePanel 的 GameObject
     public GameObject miniGamePanel;
+
+    private bool isFinish = false;
 
 
     // 所需的正确顺序点列表
@@ -199,9 +207,11 @@ public class ui_thread : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoin
                     if (correctCount == requiredOrder.Count - 1) {
 
                         // 游戏结束
-                        MiniGameManager.GetInstance().FinishMinigame("LineMatch");
-        
+                        isFinish = true;
+                        StartCoroutine(FadeInAndOut());
                        
+
+
                     }
                     start = (RectTransform)eventData.pointerEnter.transform;
 
@@ -218,6 +228,9 @@ public class ui_thread : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoin
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        if (isFinish) {
+            return;
+        }
         while (games.Count > 0)
         {
             Destroy(games[0]);
@@ -226,4 +239,30 @@ public class ui_thread : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoin
         start = null;
         fingerLine.gameObject.SetActive(false);
     }
+
+    IEnumerator FadeInAndOut()
+    {
+        Debug.Log("fade");
+        float fadeDuration = 1.5f;
+        float timeElapsed = 0f;
+
+        while (timeElapsed < fadeDuration)
+        {
+            pointsCanvasGroup.alpha = Mathf.Lerp(1f, 0f, timeElapsed / fadeDuration);
+            buildingsCanvasGroup.alpha = Mathf.Lerp(0f, 1f, timeElapsed / fadeDuration);
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }
+        pointsCanvasGroup.alpha = 0f;
+        buildingsCanvasGroup.alpha = 1f;
+        StartCoroutine(Pause());
+       
+    }
+
+    IEnumerator Pause()
+    {
+        yield return new WaitForSeconds(1.5f);
+        MiniGameManager.GetInstance().FinishMinigame("LineMatch");
+    }
 }
+
