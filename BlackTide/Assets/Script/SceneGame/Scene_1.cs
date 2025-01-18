@@ -30,6 +30,7 @@ public class Scene_1 : SceneGameBase
 
     public void OnScreenSeparate()
     {
+        StartCoroutine(SlidePanelOut());
         StartCoroutine(SlidePanelIn());
     }
 
@@ -47,7 +48,7 @@ public class Scene_1 : SceneGameBase
 
     private IEnumerator SlidePanelIn()
     {
-        float waitTime = 1f;
+        float waitTime = 2f;
         float duration = 2.0f; 
         float elapsed = 0.0f;
 
@@ -63,12 +64,39 @@ public class Scene_1 : SceneGameBase
             elapsed += Time.deltaTime;
             float t = elapsed / duration;
             View2.GetComponent<Image>().color = new Color(1, 1, 1, Mathf.Lerp(0, 1, t));
-            phoneAni.gameObject.GetComponent<Image>().color = new Color(1, 1, 1, Mathf.Lerp(0, 1, t));
+            phoneAni.gameObject.GetComponent<Image>().color = new Color(1, 0.88f, 0.65f, Mathf.Lerp(0, 1, t));
             yield return null;
         }
 
         View2.GetComponent<Image>().color = new Color(1, 1, 1, 1);
-        phoneAni.gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+        phoneAni.gameObject.GetComponent<Image>().color = new Color(1, 0.88f, 0.65f, 1);
         PhoneCall();
+    }
+
+    private IEnumerator SlidePanelOut()
+    {
+        float waitTime = 2f;
+        float duration = 2.0f;
+        float elapsed = 0.0f;
+
+        while (elapsed < waitTime)
+        {
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        elapsed = 0.0f;
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / duration;
+            View1.GetComponent<Image>().color = new Color(1, 1, 1, Mathf.Lerp(1, 0, t));
+            bottleCoverAni.gameObject.GetComponent<Image>().color = new Color(1, 0.88f, 0.65f, Mathf.Lerp(1, 0, t));
+            yield return null;
+        }
+
+        View1.GetComponent<Image>().color = new Color(1, 1, 1, 0);
+        bottleCoverAni.gameObject.GetComponent<Image>().color = new Color(1, 0.88f, 0.65f, 0);
+        View1.SetActive(false);
     }
 }

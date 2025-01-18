@@ -226,7 +226,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "A2 \u5012\u9152\u7684\u74F6_0": 2063181859878519306
+      "A2 \u5012\u9152\u7684\u74F6_1": -8222836339487937832
+      "A2 \u5012\u9152\u7684\u74F6_2": 5635357154499234941
+      "A2 \u5012\u9152\u7684\u74F6_3": 6660224079900979065
+      "A2 \u5012\u9152\u7684\u74F6_4": -3874267926390001652
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

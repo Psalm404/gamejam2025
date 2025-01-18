@@ -5,50 +5,51 @@ public static class StoryData
 {
     public static List<DialogSequence> dialogSequences = new List<DialogSequence>();
 
-    public static void Init() {
+    public static void Init()
+    {
         DialogSequence s1 = new DialogSequence(0, 1, GameState.SceneGame);
-        s1.AddDialog(new Dialog("小夫", "嗯、嗯，您放心，我明天的东西都准备好了。", 3));
-        s1.AddDialog(new Dialog("小夫", "肯定会有很好的呈现的。", 3));
-        s1.AddDialog(new Dialog("小夫", "辛苦您这么晚了还打电话来问候，您快休息。", 3));
-        s1.AddDialog(new Dialog("小夫", "哈……哈，好的，我一定注意身体。", 3));
+        s1.AddDialog(new Dialog("小夫", "嗯、嗯，您放心，我明天的东西都准备好了。", 1));
+        s1.AddDialog(new Dialog("小夫", "肯定会有很好的呈现的。", 1));
+        s1.AddDialog(new Dialog("小夫", "辛苦您这么晚了还打电话来问候，您快休息。", 1));
+        s1.AddDialog(new Dialog("小夫", "哈……哈，好的，我一定注意身体。", 1));
         dialogSequences.Add(s1);
 
         DialogSequence s2 = new DialogSequence(1, 2, GameState.SceneGame);
-        s2.AddDialog(new Dialog("小夫", "刚想喝点麻醉一下……", 4));
-        s2.AddDialog(new Dialog("小夫", "我哪知道该做什么……", 4));
-        s2.AddDialog(new Dialog("小夫", "拿往年的套话拼一拼呗……", 4));
+        s2.AddDialog(new Dialog("小夫", "刚想喝点麻醉一下……"));
+        s2.AddDialog(new Dialog("小夫", "我哪知道该做什么……"));
+        s2.AddDialog(new Dialog("小夫", "拿往年的套话拼一拼呗……"));
         dialogSequences.Add(s2);
 
-        DialogSequence s3 = new DialogSequence(2, 3, GameState.MiniGame);
+        DialogSequence s3 = new DialogSequence(2, 3, GameState.SceneGame);
         s3.AddDialog(new Dialog("小夫", "公司产业整合顺利，集群化程度显著提高。"));
         dialogSequences.Add(s3);
 
-        DialogSequence s4 = new DialogSequence(3, 4, GameState.MiniGame);
+        DialogSequence s4 = new DialogSequence(3, 4, GameState.SceneGame);
         s4.AddDialog(new Dialog("小夫", "企业发展势头迅猛，年度营收迈上新台阶。"));
         s4.AddDialog(new Dialog("小夫", "哈……净说些谁都不信的话……"));
         s4.AddDialog(new Dialog("小夫", "再找点数据支撑吧……"));
         dialogSequences.Add(s4);
 
-        DialogSequence s5 = new DialogSequence(4, 5, GameState.MiniGame);
+        DialogSequence s5 = new DialogSequence(4, 5, GameState.SceneGame);
         s5.AddDialog(new Dialog("小夫", "较去年同期同比增长……"));
         dialogSequences.Add(s5);
 
-        DialogSequence s6 = new DialogSequence(5, 6, GameState.MiniGame);
+        DialogSequence s6 = new DialogSequence(5, 6, GameState.SceneGame);
         s6.AddDialog(new Dialog("小夫", "企业于全行业居于龙头地位，占领50%以上市场份额……"));
         s6.AddDialog(new Dialog("小夫", "呵，跟打工人有什么关系"));
         s6.AddDialog(new Dialog("小夫", "还不是要半夜加班……"));
         s6.AddDialog(new Dialog("小夫", "不过本来也吃不下、睡不着。"));
         s6.AddDialog(new Dialog("小夫", "最近真不知道怎么了……"));
-        s6.AddDialog(new Dialog("小夫", "还是喝点麻醉一下吧……"));
+        s6.AddDialog(new Dialog("小夫", "还是喝点麻醉一下吧。调制饮料，改变人生……"));
         dialogSequences.Add(s6);
 
-        DialogSequence s7 = new DialogSequence(6, 7, GameState.MiniGame);
+        DialogSequence s7 = new DialogSequence(6, 7, GameState.SceneGame);
         s7.AddDialog(new Dialog("小夫", "好久好久都感觉不到快乐了……"));
         s7.AddDialog(new Dialog("小夫", "只有喝醉的时候，心里会涌起没来由的快乐……"));
         s7.AddDialog(new Dialog("小夫", "我之前可是滴酒不沾的，哈哈……"));
         dialogSequences.Add(s7);
 
-        DialogSequence s8 = new DialogSequence(7, 8, GameState.MiniGame);
+        DialogSequence s8 = new DialogSequence(7, 8, GameState.SceneGame);
         s8.AddDialog(new Dialog("小夫", "火辣辣的、苦、酸，就是这个感觉……"));
         s8.AddDialog(new Dialog("小夫", "这不就是我的人生吗，哈哈"));
         s8.AddDialog(new Dialog("小夫", "与其说是喝酒寻求快乐，不如说是在惩罚自己……"));
@@ -68,17 +69,17 @@ public static class StoryData
         dialogSequences.Add(s11);
 
         DialogSequence s12 = new DialogSequence(11, 12, GameState.MiniGame);
-        s12.AddDialog(new Dialog("小夫", "(闭眼）还是……压不住啊……"));
+        s12.AddDialog(new Dialog("小夫", "(还是……压不住啊……"));
         dialogSequences.Add(s12);
 
 
         //序章到上编过渡
 
         DialogSequence g1 = new DialogSequence(12, 13, GameState.SceneGame);
-        g1.AddDialog(new Dialog("小夫", "我感到我被一直拉下去，我也不知道会去哪里……",7));
+        g1.AddDialog(new Dialog("小夫", "我感到我被一直拉下去，我也不知道会去哪里……", 7));
         g1.AddDialog(new Dialog("小夫", "无边的黑暗……不停的下坠……", 7));
-        g1.AddDialog(new Dialog("小夫", "我……（哽咽抽泣）",8));
-        g1.AddDialog(new Dialog("小夫", "对不起……我不该这样",9)); 
+        g1.AddDialog(new Dialog("小夫", "我……（哽咽抽泣）", 8));
+        g1.AddDialog(new Dialog("小夫", "对不起……我不该这样", 9));
         g1.AddDialog(new Dialog("？？？", "没关系。放松，一切会好起来的。", 10));
         g1.AddDialog(new Dialog("？？？", "你还好吗？放轻松，擦一下眼泪吧。", 10));
         dialogSequences.Add(g1);
@@ -95,13 +96,13 @@ public static class StoryData
 
         DialogSequence g4 = new DialogSequence(15, 16, GameState.SceneGame);
         g4.AddDialog(new Dialog("小夫", "谢谢你……", 15));
-        g4.AddDialog(new Dialog("？？？", "抱歉，刚才让你想起了难过的回忆。听起来你上一次情绪发作真的很难受……",15));
-        g4.AddDialog(new Dialog("？？？", "我们再聊点其他关于你过去的事情，好吗？",15));
-        g4.AddDialog(new Dialog("小夫", "好的……谢谢您。",15));
+        g4.AddDialog(new Dialog("？？？", "抱歉，刚才让你想起了难过的回忆。听起来你上一次情绪发作真的很难受……", 15));
+        g4.AddDialog(new Dialog("？？？", "我们再聊点其他关于你过去的事情，好吗？", 15));
+        g4.AddDialog(new Dialog("小夫", "好的……谢谢您。", 15));
         dialogSequences.Add(g4);
 
         //上编
-        DialogSequence f1 = new DialogSequence(200, -1, GameState.LastSceneGame);
+        DialogSequence f1 = new DialogSequence(200, 16, GameState.LastSceneGame);
         f1.AddDialog(new Dialog("小夫", "对不起……都怪我不好。"));
         f1.AddDialog(new Dialog("小夫", "对不起，都是我的错。"));
         f1.AddDialog(new Dialog("小夫", "我不该不听话……"));
@@ -113,15 +114,15 @@ public static class StoryData
         f1.AddDialog(new Dialog("咨询师", "打破他们，相信自己。"));
         dialogSequences.Add(f1);
 
-        DialogSequence f2 = new DialogSequence(201, -1, GameState.LastSceneGame);
+        DialogSequence f2 = new DialogSequence(201, 16, GameState.LastSceneGame);
         f2.AddDialog(new Dialog("咨询师", "你已经战胜他们了，只不过这段记忆被它们留下的痛苦蒙蔽了，清理掉这些污浊吧。"));
         dialogSequences.Add(f2);
 
-        DialogSequence f3 = new DialogSequence(202, -1, GameState.LastSceneGame);
+        DialogSequence f3 = new DialogSequence(202, 16, GameState.LastSceneGame);
         f3.AddDialog(new Dialog("咨询师", "你还记得你当时怎么战胜这些痛苦的吗？"));
         dialogSequences.Add(f3);
 
-        DialogSequence f4 = new DialogSequence(203, -1, GameState.LastSceneGame);
+        DialogSequence f4 = new DialogSequence(203, 16, GameState.LastSceneGame);
         f4.AddDialog(new Dialog("咨询师", "把负能量击碎，我相信你。"));
         dialogSequences.Add(f4);
 
@@ -161,17 +162,17 @@ public static class StoryData
         //下编
         DialogSequence p1 = new DialogSequence(20, 21, GameState.SceneGame);
         p1.AddDialog(new Dialog("小日", "《隋唐制度渊源略论稿》……"));
-        p1.AddDialog(new Dialog("小日", "你也是历史学院来的吗 ?"));
+        p1.AddDialog(new Dialog("小日", "你也是历史系来的吗 ?"));
         dialogSequences.Add(p1);
 
         DialogSequence p2 = new DialogSequence(21, 22, GameState.SceneGame);
         p2.AddDialog(new Dialog("小夫", "啊没有没有……我是理工科转来的，对历史感兴趣而已啦。"));
         p2.AddDialog(new Dialog("小日", "我就是感觉没见过你嘛。"));
-        p2.AddDialog(new Dialog("小日", "还是第一次在班里遇到和我一样做历史的呢。"));
-        p2.AddDialog(new Dialog("小日", "(浅笑)我叫小日，历史学院来的。"));
+        p2.AddDialog(new Dialog("小日", "还是第一次在人文实验班里遇到和我一样做历史的呢。"));
+        p2.AddDialog(new Dialog("小日", "(浅笑)我叫小日，历史系来的。"));
         p2.AddDialog(new Dialog("小夫", "你是历史系来的? 你就是那个专业第一吗?"));
         p2.AddDialog(new Dialog("小日", "那都是过去的事儿了。以后大家多交流哦。"));
-        p2.AddDialog(new Dialog("小夫", "不敢不敢，我吃喝玩乐还比较行，看书就头大了，哈哈，可以一起玩呀。"));
+        p2.AddDialog(new Dialog("小夫", "不敢不敢。都说进入人文实验班就是提前进入了学术圈，果然都是像你这样的精英啊。要多向你们学习呀。"));
         p2.AddDialog(new Dialog("小日", "过谦了。"));
         p2.AddDialog(new Dialog("小日", "不过说回来，如果是理工科转过来的，可能真的要补补专业课。"));
         p2.AddDialog(new Dialog("小日", "你有《古籍概要》吗 ?"));
@@ -224,11 +225,15 @@ public static class StoryData
         p8.AddDialog(new Dialog("小日", "马上就有一部戏。"));
         p8.AddDialog(new Dialog("小日", "这么好的表现力，来我们这正合适。"));
         p8.AddDialog(new Dialog("小夫", "啊……好啊。"));
-        p8.AddDialog(new Dialog("小夫", "画上相关的图案当暗号，这就是你的介绍信了。"));
+        p8.AddDialog(new Dialog("小日", "画上相关的图案当暗号，这就是你的介绍信了。"));
         dialogSequences.Add(p8);
 
-
-        DialogSequence p9 = new DialogSequence(28, 29, GameState.SceneGame);
+        DialogSequence p8_2 = new DialogSequence(28, 29, GameState.SceneGame);
+        p8_2.AddDialog(new Dialog("小日", "这就算生效了。"));
+        p8_2.AddDialog(new Dialog("小日", "(浅笑)到时见。"));
+        dialogSequences.Add(p8_2);
+ 
+        DialogSequence p9 = new DialogSequence(29, 30, GameState.SceneGame);
         p9.AddDialog(new Dialog("小夫", "没想到又弄到这么晚。"));
         p9.AddDialog(new Dialog("小日", "（低头，握拳放于桌上）我不是把你拉来给我干活的……"));
         p9.AddDialog(new Dialog("小日", "我当时只是觉得你会合适这个角色。"));
@@ -245,7 +250,7 @@ public static class StoryData
         p9.AddDialog(new Dialog("小夫", "啊当然可以。"));
         dialogSequences.Add(p9);
 
-        DialogSequence p10 = new DialogSequence(29, 30, GameState.SceneGame);
+        DialogSequence p10 = new DialogSequence(30, 31, GameState.SceneGame);
         p10.AddDialog(new Dialog("小日", "……对不起对不起。", 28));
         p10.AddDialog(new Dialog("小日", "明明是我自己可以干好的……", 28));
         p10.AddDialog(new Dialog("小夫", "别这么说……", 28));
@@ -257,13 +262,13 @@ public static class StoryData
         p10.AddDialog(new Dialog("小日", "（伸手）看到我食指的这道口子了吗……", 30));
         dialogSequences.Add(p10);
 
-        DialogSequence p11 = new DialogSequence(30, 31, GameState.Dialog);
+        DialogSequence p11 = new DialogSequence(31, 32, GameState.Dialog);
         p11.AddDialog(new Dialog("小日", "我把自己变成了刺猬，不让人靠近。", 31));
         p11.AddDialog(new Dialog("小日", "因为我不想……", 31));
         p11.AddDialog(new Dialog("小日", "但你，你很可靠……", 31));
         p11.AddDialog(new Dialog("小日", "……", 31));
         p11.AddDialog(new Dialog("小日", "你还记得我给你的那张票吗？", 31));
-        p11.AddDialog(new Dialog("小夫", "我随身保存着。",32));
+        p11.AddDialog(new Dialog("小夫", "我随身保存着。", 32));
         p11.AddDialog(new Dialog("小日", "雨伞是遮蔽风雨，玫瑰你明白，太阳……", 33));
         p11.AddDialog(new Dialog("小日", "那是我藏在心底的愿望。", 33));
         p11.AddDialog(new Dialog("小日", "我叫小日，但我的生活里没有太阳。", 33));
@@ -272,7 +277,7 @@ public static class StoryData
         p11.AddDialog(new Dialog("小日", "我和她一样陷于泥淖无法自拔，我们都期待着太阳能照耀我们……", 33));
         dialogSequences.Add(p11);
 
-        DialogSequence p12 = new DialogSequence(31, 32, GameState.SceneGame);
+        DialogSequence p12 = new DialogSequence(32, 33, GameState.SceneGame);
         p12.AddDialog(new Dialog("小日", "我喝多了，今晚的话你会忘的对吧。", 34));
         p12.AddDialog(new Dialog("小夫", "当然，我会尊重你的秘密。", 34));
         p12.AddDialog(new Dialog("小日", "最后对一下台词吧……然后回去睡觉。", 34));
@@ -285,7 +290,7 @@ public static class StoryData
         dialogSequences.Add(p12);
 
 
-        DialogSequence p13 = new DialogSequence(32, 33, GameState.Dialog);
+        DialogSequence p13 = new DialogSequence(33, 34, GameState.Dialog);
         p13.AddDialog(new Dialog("小夫", "……"));
         p13.AddDialog(new Dialog("小日", "……"));
         p13.AddDialog(new Dialog("小夫", "多亏有你……"));
@@ -295,7 +300,7 @@ public static class StoryData
         p13.AddDialog(new Dialog("小夫", "谢谢你，在你闪闪发光的时刻愿意拥抱最落魄的我……"));
         dialogSequences.Add(p13);
 
-        DialogSequence p14 = new DialogSequence(33, 34, GameState.Dialog);
+        DialogSequence p14 = new DialogSequence(34, 35, GameState.Dialog);
         p14.AddDialog(new Dialog("小夫", "你高中就在五汉大学简帛网上发了学术论文，过了民众大学自主招生……"));
         p14.AddDialog(new Dialog("小夫", "大一第一节汇报课就一鸣惊人，被院长说“有研究生水平”"));
         p14.AddDialog(new Dialog("小夫", "历史系第一，考入人文实验班还是第一……"));
@@ -310,7 +315,7 @@ public static class StoryData
         p14.AddDialog(new Dialog("小夫", "赌我的人生能走上正轨完全没有意义，你为什么不去找一个朝气蓬勃、前途大好的男孩子呢。"));
         dialogSequences.Add(p14);
 
-        DialogSequence p15 = new DialogSequence(34, 35, GameState.SceneGame);
+        DialogSequence p15 = new DialogSequence(35, 36, GameState.SceneGame);
         p15.AddDialog(new Dialog("小日", "不许这么说自己。"));
         p15.AddDialog(new Dialog("小日", "老实说，我也听到了很多声音。"));
         p15.AddDialog(new Dialog("小日", "但我，只相信自己看到的。"));
@@ -322,7 +327,7 @@ public static class StoryData
 
         //星空对话
         //小夫：1
-        DialogSequence sky1 = new DialogSequence(101, -1, GameState.LastSceneGame);
+        DialogSequence sky1 = new DialogSequence(101, 36, GameState.LastSceneGame);
         sky1.AddDialog(new Dialog("小夫", "我说了很多遍了，学文科是我自己的选择，我就是喜欢！"));
         sky1.AddDialog(new Dialog("电话", "你喜欢，那你做出成绩了吗？"));
         sky1.AddDialog(new Dialog("电话", "本来专业就没法就业，做成这个样子你打算毕业怎么办？"));
@@ -333,18 +338,18 @@ public static class StoryData
         dialogSequences.Add(sky1);
 
         //人群：2
-        DialogSequence sky2 = new DialogSequence(102, -1, GameState.LastSceneGame);
-        sky2.AddDialog(new Dialog("人群1", "呦，第一排又空着啊。"));
-        sky2.AddDialog(new Dialog("人群1", "真牛，第一排也敢不上课。"));
-        sky2.AddDialog(new Dialog("人群2", "人家的自由，科科倒数人家也无所谓。"));
-        sky2.AddDialog(new Dialog("人群2", "整天吊儿郎当的样，混成这样不是活该。"));
+        DialogSequence sky2 = new DialogSequence(102, 36, GameState.LastSceneGame);
+        sky2.AddDialog(new Dialog("人群1", "呦，道德模范又在那谈他的理想情怀了。"));
+        sky2.AddDialog(new Dialog("人群1", "整天正事不干一点，就知道凹人设？"));
+        sky2.AddDialog(new Dialog("人群2", "就是，整天不切实际的，也不看看自己啥样。"));
+        sky2.AddDialog(new Dialog("人群2", "有那闲工夫，还不如多去参加几个实习，多攒点经验，以后找工作也容易点。"));
         sky2.AddDialog(new Dialog("人群3", "就是自己懒呗，还有啥借口。"));
-        sky2.AddDialog(new Dialog("人群3", "自己不知道按重点复习，不知道为了得高分花心思。"));
+        sky2.AddDialog(new Dialog("人群3", "不就是懒，不想努力？净拿理想当借口。"));
         sky2.AddDialog(new Dialog("人群3", "不是活该？这有啥可同情的。"));
         dialogSequences.Add(sky2);
-        
+
         //小日：4
-        DialogSequence sky3 = new DialogSequence(104, -1, GameState.LastSceneGame);
+        DialogSequence sky3 = new DialogSequence(104, 36, GameState.LastSceneGame);
         sky3.AddDialog(new Dialog("小日", "你们不要再说了，我跟他相处了这么久我自己有判断。"));
         sky3.AddDialog(new Dialog("小日", "他善良、温柔、有独立的思想。"));
         sky3.AddDialog(new Dialog("小日", "他只是没找到自己的节奏而已。"));
@@ -352,7 +357,7 @@ public static class StoryData
         dialogSequences.Add(sky3);
 
         //【小夫 & 人群】1+2 = 3
-        DialogSequence sky4 = new DialogSequence(103, -1, GameState.LastSceneGame);
+        DialogSequence sky4 = new DialogSequence(103, 36, GameState.LastSceneGame);
         sky4.AddDialog(new Dialog("人群", "呦，难得你来听课啊。"));
         sky4.AddDialog(new Dialog("小夫", "……"));
         sky4.AddDialog(new Dialog("人群", "来不来的无所谓，反正你又不听。"));
@@ -368,7 +373,7 @@ public static class StoryData
         dialogSequences.Add(sky4);
 
         //【小日 & 人群】 4+2 = 6
-        DialogSequence sky5 = new DialogSequence(106, -1, GameState.LastSceneGame);
+        DialogSequence sky5 = new DialogSequence(106, 36, GameState.LastSceneGame);
         sky5.AddDialog(new Dialog("人群", "你已经拿到京海大学的推免补录资格了哎！"));
         sky5.AddDialog(new Dialog("人群", "为什么第一志愿不填上？你不想去京海大学吗？"));
         sky5.AddDialog(new Dialog("人群", "说不定就去了。"));
@@ -381,21 +386,21 @@ public static class StoryData
         dialogSequences.Add(sky5);
 
         //【小夫&人群&小日】 4+1+2 = 7
-        DialogSequence sky6 = new DialogSequence(107, -1, GameState.LastSceneGame);
+        DialogSequence sky6 = new DialogSequence(107, 36, GameState.LastSceneGame);
         sky6.AddDialog(new Dialog("人群1", "躲远点吧，俩逼王又来了。"));
-        sky6.AddDialog(new Dialog("人群1", "人家都是不屑于同流合污，早成道德模范了。"));
+        sky6.AddDialog(new Dialog("人群1", "人家都是不屑于同流合污，要不早呼风唤雨了。"));
         sky6.AddDialog(new Dialog("人群2", "能耐要有吹的牛一半大也不至于混成这样。"));
         dialogSequences.Add(sky6);
 
         //【小夫 & 小日】 4+1 = 5
-        DialogSequence sky7 = new DialogSequence(105, -1, GameState.LastSceneGame);
+        DialogSequence sky7 = new DialogSequence(105, 36, GameState.LastSceneGame);
         sky7.AddDialog(new Dialog("小夫", "我们现在是什么关系……"));
         sky7.AddDialog(new Dialog("小日", "你已经是了呀。"));
         dialogSequences.Add(sky7);
 
 
-        DialogSequence p16 = new DialogSequence(35, 36, GameState.Dialog);
-        p16.AddDialog(new Dialog("小夫", "谢谢你选择我。",20));
+        DialogSequence p16 = new DialogSequence(36, 37, GameState.Dialog);
+        p16.AddDialog(new Dialog("小夫", "谢谢你选择我。", 20));
         p16.AddDialog(new Dialog("小日", "别这么说。", 20));
         p16.AddDialog(new Dialog("小日", "我们是互相救赎。", 20));
         p16.AddDialog(new Dialog("小日", "你帮了我很多。", 20));
@@ -412,7 +417,7 @@ public static class StoryData
         p16.AddDialog(new Dialog("小夫", "你穿洁白的婚纱肯定特别美。", 20));
         dialogSequences.Add(p16);
 
-        DialogSequence p17 = new DialogSequence(36, 37, GameState.SceneGame);
+        DialogSequence p17 = new DialogSequence(37, 38, GameState.SceneGame);
         p17.AddDialog(new Dialog("小夫", "你怎么了，你还好吗？", 21));
         p17.AddDialog(new Dialog("小夫", "是不是我太冒失了，对不起对不起，我不是有意让你不高兴的。", 21));
         p17.AddDialog(new Dialog("小日", "不……是太高兴了。", 21));
@@ -421,19 +426,19 @@ public static class StoryData
         dialogSequences.Add(p17);
 
 
-        DialogSequence p18 = new DialogSequence(37, 38, GameState.SceneGame);
+        DialogSequence p18 = new DialogSequence(38, 39, GameState.SceneGame);
         p18.AddDialog(new Dialog("小日", "下次我给你擦。"));
         p18.AddDialog(new Dialog("小夫", "哈哈，一言为定。我肯定也会经常幸福的流泪的。"));
         dialogSequences.Add(p18);
 
-        DialogSequence p19 = new DialogSequence(38, 45, GameState.SceneGame);
-        p19.AddDialog(new Dialog("小日", "！！？"));
+        DialogSequence p19 = new DialogSequence(39, 45, GameState.SceneGame);
+        p19.AddDialog(new Dialog("小夫", "！！？"));
         p19.AddDialog(new Dialog("小夫", "！！！！！！！！！！！！"));
         dialogSequences.Add(p19);
 
-        
+
         //跨时空对话
-        DialogSequence ts1 = new DialogSequence(40, -1, GameState.LastSceneGame);
+        DialogSequence ts1 = new DialogSequence(40, 46, GameState.LastSceneGame);
         ts1.AddDialog(new DialogSplit("小夫", "大一上学期就这么结束了啊。",
            "小日", "咱们好久没有单独相处过了……"));
         ts1.AddDialog(new DialogSplit("小夫", "收拾收拾东西，看看哪些要带回家吧。",
@@ -441,7 +446,7 @@ public static class StoryData
         dialogSequences.Add(ts1);
 
         //照片
-        DialogSequence ts2 = new DialogSequence(41, -1, GameState.LastSceneGame);
+        DialogSequence ts2 = new DialogSequence(41, 46, GameState.LastSceneGame);
         ts2.AddDialog(new DialogSplit("小夫", "这是我中考成绩出的那个晚上！我考了全班第一哎！我记得那个时候我还很坚定的要考燕京大学医学院呢！",
            "小日", "这是我中考完的聚餐照。"));
         ts2.AddDialog(new DialogSplit("小夫", "当医生很有魅力啊！可以治病救人哎！还有什么比治病救人更伟大的事情啊。",
@@ -461,7 +466,7 @@ public static class StoryData
         dialogSequences.Add(ts2);
 
         //课本
-        DialogSequence ts3 = new DialogSequence(42, -1, GameState.LastSceneGame);
+        DialogSequence ts3 = new DialogSequence(42, 46, GameState.LastSceneGame);
         ts3.AddDialog(new DialogSplit("小夫", "这课比我想象中要无聊哎。",
            "小日", "说真的，读历史我很幸福。我能设身处地的跨越时空，和过去一个个炽热滚烫的灵魂相拥。"));
         ts3.AddDialog(new DialogSplit("小夫", "虽然说我们学校的数学是出了名的好，全国都算顶尖的。",
@@ -475,7 +480,7 @@ public static class StoryData
         dialogSequences.Add(ts3);
 
         //笔
-        DialogSequence ts4 = new DialogSequence(43, -1, GameState.LastSceneGame);
+        DialogSequence ts4 = new DialogSequence(43, 46, GameState.LastSceneGame);
         ts4.AddDialog(new DialogSplit("小夫", "最头疼的来了。",
            "小日", "从那以后我就变了。"));
         ts4.AddDialog(new DialogSplit("小夫", "每天就是写实验报告。",
@@ -497,18 +502,20 @@ public static class StoryData
         dialogSequences.Add(ts4);
 
         //跨时空对话end
-        DialogSequence ts5 = new DialogSequence(44, -1, GameState.LastSceneGame);
-        ts5.AddDialog(new DialogSplit("小夫", "大胆去做吧，我永远支持你。",
-           "小日", "大胆去做吧，我永远支持你。"));
-        ts5.AddDialog(new DialogSplit("小夫", "嗯！我还年轻。",
-            "小日", "嗯……谢谢你支持我。"));
-        ts5.AddDialog(new DialogSplit("小夫", "有梦就去追！",
-           "小日", "谢谢鼓励我下定决心。"));
+        DialogSequence ts5 = new DialogSequence(44, 46, GameState.LastSceneGame);
+        ts5.AddDialog(new Dialog("小夫", "大胆去做吧，我永远支持你。"));
         dialogSequences.Add(ts5);
+
+        DialogSequence ts6 = new DialogSequence(45, 46, GameState.LastSceneGame);
+        ts6.AddDialog(new DialogSplit("小夫", "嗯！我还年轻。",
+            "小日", "嗯……谢谢你支持我。"));
+        ts6.AddDialog(new DialogSplit("小夫", "有梦就去追！",
+           "小日", "谢谢鼓励我下定决心。"));
+        dialogSequences.Add(ts6);
 
 
         //高潮
-        DialogSequence e1 = new DialogSequence(45, 46, GameState.SceneGame);
+        DialogSequence e1 = new DialogSequence(46, 47, GameState.SceneGame);
         e1.AddDialog(new Dialog("小夫", "我再也不想回想那个时刻，但我无时无刻脑子里都在重复。"));
         e1.AddDialog(new Dialog("小夫", "她就躺在我面前，全身惨白，比那晚月光照耀下还要白的刺眼。"));
         e1.AddDialog(new Dialog("小夫", "她脸上插满了管子，连气管都被切开了。我跪在她面前，隔着玻璃，连碰她都是奢望。"));
@@ -533,7 +540,7 @@ public static class StoryData
         e1.AddDialog(new Dialog("小夫", "为什么我什么都没做，为什么我什么都做不了。"));
         dialogSequences.Add(e1);
 
-        DialogSequence e2 = new DialogSequence(46, 47, GameState.Dialog);
+        DialogSequence e2 = new DialogSequence(47, 48, GameState.Dialog);
         e2.AddDialog(new Dialog("小日", "不要伤害自己……"));
         e2.AddDialog(new Dialog("小日", "你从来没有伤害过我。"));
         e2.AddDialog(new Dialog("小日", "你什么都不欠我。"));
@@ -547,7 +554,7 @@ public static class StoryData
         e2.AddDialog(new Dialog("小日", "照顾好自己。"));
         dialogSequences.Add(e2);
 
-        DialogSequence e3 = new DialogSequence(47, 48, GameState.Dialog);
+        DialogSequence e3 = new DialogSequence(48, 49, GameState.Dialog);
         e3.AddDialog(new Dialog("小夫", "……"));
         e3.AddDialog(new Dialog("小夫", "你知道为什么我会来到这里吧。"));
         e3.AddDialog(new Dialog("小夫", "你知道这意味着什么吧……"));
@@ -556,7 +563,7 @@ public static class StoryData
         e3.AddDialog(new Dialog("小夫", "我无法想象没有你的人生。"));
         dialogSequences.Add(e3);
 
-        DialogSequence e4 = new DialogSequence(48, 49, GameState.MiniGame);
+        DialogSequence e4 = new DialogSequence(49, 50, GameState.MiniGame);
         e4.AddDialog(new Dialog("小日", "……"));
         e4.AddDialog(new Dialog("小日", "你还记得你把我的《古籍概要》还我的那天吗？"));
         e4.AddDialog(new Dialog("小日", "我们一起聊历史学的意义。"));
@@ -568,7 +575,7 @@ public static class StoryData
         dialogSequences.Add(e4);
 
 
-        DialogSequence e5 = new DialogSequence(49, 50, GameState.MiniGame);
+        DialogSequence e5 = new DialogSequence(50, 51, GameState.MiniGame);
         e5.AddDialog(new Dialog("小日", "如果我们作为先行者都放弃了，那么后来的理想主义者靠谁去指引，靠谁去温暖呢？"));
         e5.AddDialog(new Dialog("小日", "需要有人去讲述我们的故事。"));
         e5.AddDialog(new Dialog("小日", "如今，你可以把我们吃过的苦搓成药丸，喂同病相怜的人吃下去，带他们离开泥淖。"));
@@ -594,7 +601,7 @@ public static class StoryData
 
         //尾声
 
-        DialogSequence e6= new DialogSequence(50, 51, GameState.SceneGame);
+        DialogSequence e6 = new DialogSequence(51, 52, GameState.SceneGame);
         e6.AddDialog(new Dialog("小夫", "后来，我还是没能在人文学界混出头，不得不找份工作贴补用度。"));
         e6.AddDialog(new Dialog("小夫", "但依然保有人文关怀，怀抱着所有的热情和真诚给予身边的每一个人。"));
         e6.AddDialog(new Dialog("小夫", "小日给了我活下去的理由，我日渐勇敢的学会了面对一切。"));
@@ -603,7 +610,7 @@ public static class StoryData
         e6.AddDialog(new Dialog("小晞", "师兄您好……我是小晞。"));
         dialogSequences.Add(e6);
 
-        DialogSequence e7 = new DialogSequence(51, 52, GameState.MiniGame);
+        DialogSequence e7 = new DialogSequence(52, 53, GameState.MiniGame);
         e7.AddDialog(new Dialog("小晞", "之前咨询过您学术圈的事情，今天是来感谢的。"));
         e7.AddDialog(new Dialog("小晞", "我已经以第一名的成绩入选了，功不唐捐……"));
         e7.AddDialog(new Dialog("小夫", "恭喜。不过抱歉我记不清了，您之前在哪里就读？"));
@@ -614,7 +621,7 @@ public static class StoryData
         e7.AddDialog(new Dialog("小晞", "师兄您当时劝过我。跟我说了很多……"));
         dialogSequences.Add(e7);
 
-        DialogSequence e8 = new DialogSequence(52, 53, GameState.Dialog);
+        DialogSequence e8 = new DialogSequence(53, 54, GameState.Dialog);
         e8.AddDialog(new Dialog("小晞", "我真的很感动。"));
         e8.AddDialog(new Dialog("小晞", "我知道说真话是有代价的，我没想到您会跟我说这么多。"));
         e8.AddDialog(new Dialog("小晞", "我知道，很多美好的东西都是假的。"));
@@ -625,7 +632,7 @@ public static class StoryData
         e8.AddDialog(new Dialog("小晞", "进入研究生班，这里是更高的殿堂，我能做更多的事。"));
         dialogSequences.Add(e8);
 
-        DialogSequence e9 = new DialogSequence(53, 54, GameState.Dialog);
+        DialogSequence e9 = new DialogSequence(54, 55, GameState.Dialog);
         e9.AddDialog(new Dialog("小夫", "……"));
         e9.AddDialog(new Dialog("小夫", "你真的是这么想的？"));
         e9.AddDialog(new Dialog("小夫", "我觉得我说的够残酷了。"));
@@ -640,7 +647,7 @@ public static class StoryData
         e9.AddDialog(new Dialog("小夫", "做个俗人，或者做个坏人，对你而言是好得多的选择。"));
         dialogSequences.Add(e9);
 
-        DialogSequence e10 = new DialogSequence(54, 55, GameState.SceneGame);
+        DialogSequence e10 = new DialogSequence(55, 56, GameState.SceneGame);
         e10.AddDialog(new Dialog("小晞", "谢谢你师兄，但……我想试试。"));
         e10.AddDialog(new Dialog("小晞", "此后若没有炬火，我便是唯一的光。"));
         e10.AddDialog(new Dialog("小夫", "……"));

@@ -26,11 +26,9 @@ public class MiniGameManager : MonoBehaviour
         return Instance;
     }
 
-
+    [SerializeField]
     private int currentGameID = 0;
     private MiniGamePanel currentMiniGame;
-    [SerializeField]
-    private List<GameObject> miniGamePanelPrefab = new List<GameObject>();
     [SerializeField]
     private List<GameObject> miniGames = new List<GameObject>();
 
@@ -45,7 +43,7 @@ public class MiniGameManager : MonoBehaviour
             Destroy(currentMiniGame.gameObject);
         }
        
-        if (currentGameID < miniGamePanelPrefab.Count)
+        if (currentGameID < miniGames.Count)
         {
             GameObject minigame = miniGames[currentGameID];
             if (minigame != null)
@@ -82,8 +80,6 @@ public class MiniGameManager : MonoBehaviour
         Destroy(currentMiniGame.gameObject);
         currentMiniGame = null;
         currentGameID++;
-
-
     }
 
 

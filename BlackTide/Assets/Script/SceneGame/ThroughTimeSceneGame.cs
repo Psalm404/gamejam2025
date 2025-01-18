@@ -16,11 +16,19 @@ public class ThroughTimeSceneGame : SceneGameBase
     private int flag = 0;
     public override void StartPlay()
     {
-        if (flag == 0) {
+        if (flag == 0)
+        {
             DialogManager.GetInstance().isInSplitDialog = true;
             MainGameManager.GetInstance().StartDialogSequence(40);
             flag = 1;
-        } else if (flag == 2)
+        }
+        else if (flag == 2)
+        {
+            DialogManager.GetInstance().isInSplitDialog = true;
+            MainGameManager.GetInstance().StartDialogSequence(45);
+            flag = 3;
+        }
+        else if (flag == 3)
         {
             DialogManager.GetInstance().isInSplitDialog = false;
             MainGameManager.GetInstance().SwitchState(GameState.SceneGame);
@@ -47,6 +55,7 @@ public class ThroughTimeSceneGame : SceneGameBase
             currentSelected = -1;
             disappearCount++;
             if (disappearCount == 3) {
+                DialogManager.GetInstance().isInSplitDialog = false;
                 MainGameManager.GetInstance().StartDialogSequence(44);
                 flag = 2;
             }
