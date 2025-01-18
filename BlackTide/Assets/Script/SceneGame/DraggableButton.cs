@@ -12,6 +12,10 @@ public class DraggableButton : MonoBehaviour, IPointerDownHandler, IDragHandler,
 
     public float snapThreshold = 100f; // 判断到达目标区域的阈值
 
+    public int id; // 物品id
+    [SerializeField]
+    private SelectThingGame selectThingGame;
+
     public Camera cam;
 
     private void Awake()
@@ -44,10 +48,13 @@ public class DraggableButton : MonoBehaviour, IPointerDownHandler, IDragHandler,
            
             if (Mathf.Abs(distanceToTarget.x) < snapThreshold && Mathf.Abs(distanceToTarget.y) < snapThreshold)
             {
-                // 到达目标位置，触发事件
-                Debug.Log("Button snapped to target position.");
-                // 你可以在这里调用其他事件或方法
-                MainGameManager.GetInstance().SwitchState(GameState.SceneGame);
+                if (selectThingGame.isSuccess(id))
+                {
+                    MainGameManager.GetInstance().SwitchState(GameState.SceneGame);
+                }
+                else {
+                    rectTransform.anchoredPosition = originalPosition;
+                }
             }
             else
             {

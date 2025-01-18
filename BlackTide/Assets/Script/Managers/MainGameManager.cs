@@ -44,10 +44,10 @@ public class MainGameManager : MonoBehaviour
             MiniGameManager.GetInstance().LoadGame();
         }
         else if (currentState == GameState.SceneGame) {
-            SceneGameManager.GetInstance().Load();
             UIManager.GetInstance().CloseDialogPanel();
             UIManager.GetInstance().CloseMiniGamePanel();
             UIManager.GetInstance().ShowSceneGamePanel();
+            SceneGameManager.GetInstance().Load();
         }
     }
 

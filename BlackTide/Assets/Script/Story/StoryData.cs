@@ -79,26 +79,27 @@ public static class StoryData
         g1.AddDialog(new Dialog("小夫", "我感到我被一直拉下去，我也不知道会去哪里……", 7));
         g1.AddDialog(new Dialog("小夫", "无边的黑暗……不停的下坠……", 7));
         g1.AddDialog(new Dialog("小夫", "我……（哽咽抽泣）", 8));
-        g1.AddDialog(new Dialog("小夫", "对不起……我不该这样", 9));
+        g1.AddDialog(new Dialog("小夫", "对不起……我不该这样", 8));
         g1.AddDialog(new Dialog("？？？", "没关系。放松，一切会好起来的。", 10));
         g1.AddDialog(new Dialog("？？？", "你还好吗？放轻松，擦一下眼泪吧。", 10));
         dialogSequences.Add(g1);
+        //点击手
 
-        DialogSequence g2 = new DialogSequence(13, 14, GameState.MiniGame);
+        DialogSequence g2 = new DialogSequence(13, 14, GameState.LastSceneGame);
         g2.AddDialog(new Dialog("？？？", "擦擦眼泪吧……"));
         dialogSequences.Add(g2);
 
-        DialogSequence g3 = new DialogSequence(14, 15, GameState.SceneGame);
+        DialogSequence g3 = new DialogSequence(14, 15, GameState.LastSceneGame);
         g3.AddDialog(new Dialog("？？？", "保管好好不好，不要乱丢哦。"));
         g3.AddDialog(new Dialog("小夫", "好……"));
         dialogSequences.Add(g3);
 
 
         DialogSequence g4 = new DialogSequence(15, 16, GameState.SceneGame);
-        g4.AddDialog(new Dialog("小夫", "谢谢你……", 15));
-        g4.AddDialog(new Dialog("？？？", "抱歉，刚才让你想起了难过的回忆。听起来你上一次情绪发作真的很难受……", 15));
-        g4.AddDialog(new Dialog("？？？", "我们再聊点其他关于你过去的事情，好吗？", 15));
-        g4.AddDialog(new Dialog("小夫", "好的……谢谢您。", 15));
+        g4.AddDialog(new Dialog("小夫", "谢谢你……", 12));
+        g4.AddDialog(new Dialog("？？？", "抱歉，刚才让你想起了难过的回忆。听起来你上一次情绪发作真的很难受……", 13));
+        g4.AddDialog(new Dialog("？？？", "我们再聊点其他关于你过去的事情，好吗？", 13));
+        g4.AddDialog(new Dialog("小夫", "好的……谢谢您。", 13));
         dialogSequences.Add(g4);
 
         //上编
@@ -129,33 +130,33 @@ public static class StoryData
         //上下过渡
 
         DialogSequence t1 = new DialogSequence(16, 17, GameState.Dialog);
-        t1.AddDialog(new Dialog("咨询师", "……我好心疼你。"));
-        t1.AddDialog(new Dialog("咨询师", "这么久以来，辛苦啦。"));
-        t1.AddDialog(new Dialog("咨询师", "一个人承受了这么多，一次又一次的倒下再爬起来……"));
-        t1.AddDialog(new Dialog("小夫", "谢谢您。"));
+        t1.AddDialog(new Dialog("咨询师", "……我好心疼你。",15));
+        t1.AddDialog(new Dialog("咨询师", "这么久以来，辛苦啦。", 15));
+        t1.AddDialog(new Dialog("咨询师", "一个人承受了这么多，一次又一次的倒下再爬起来……", 15));
+        t1.AddDialog(new Dialog("小夫", "谢谢您。", 15));
         t1.AddDialog(new Dialog("小夫", "我在过去经历过很多痛苦。"));
-        t1.AddDialog(new Dialog("小夫", "最艰难的时刻，我读了很多人文学科的书。"));
-        t1.AddDialog(new Dialog("小夫", "是人文学界救了我。"));
+        t1.AddDialog(new Dialog("小夫", "最艰难的时刻，我读了很多人文学科的书。", 15));
+        t1.AddDialog(new Dialog("小夫", "是人文学界救了我。", 15));
+        t1.AddDialog(new Dialog("小夫", "……", 15));
         dialogSequences.Add(t1);
 
         DialogSequence t2 = new DialogSequence(17, 18, GameState.Dialog);
-        t2.AddDialog(new Dialog("小夫", "……"));
-        t2.AddDialog(new Dialog("小夫", "不对……我的确是受人文关怀的吸引去了人文学界。"));
-        t2.AddDialog(new Dialog("小夫", "但我记得我在那里很痛苦，那里很多人没有人文关怀。"));
-        t2.AddDialog(new Dialog("小夫", "我期待的其实是人文关怀，是爱。"));
-        t2.AddDialog(new Dialog("小夫", "不对，那我是怎么从无边的痛苦中熬过来的……"));
-        t2.AddDialog(new Dialog("咨询师", "关键还是你自己啦，没有人能代替你承受这一切。"));
+        t2.AddDialog(new Dialog("小夫", "不对……我的确是受人文关怀的吸引去了人文学界。", 16));
+        t2.AddDialog(new Dialog("小夫", "但我记得我在那里很痛苦，那里很多人没有人文关怀。", 16));
+        t2.AddDialog(new Dialog("小夫", "我期待的其实是人文关怀，是爱。", 16));
+        t2.AddDialog(new Dialog("小夫", "不对，那我是怎么从无边的痛苦中熬过来的……", 16));
+        t2.AddDialog(new Dialog("咨询师", "关键还是你自己啦，没有人能代替你承受这一切。", 16));
         dialogSequences.Add(t2);
 
         DialogSequence t3 = new DialogSequence(18, 20, GameState.SceneGame);
-        t3.AddDialog(new Dialog("小夫", "一定是有个人，给了我很多爱，带我走出这一切。"));
-        t3.AddDialog(new Dialog("小夫", "我好像记得她对我的意义，给予我的支持……"));
-        t3.AddDialog(new Dialog("小夫", "但她是谁？到底长什么样子……"));
-        t3.AddDialog(new Dialog("小夫", "我记不清了"));
-        t3.AddDialog(new Dialog("咨询师", "记不清就不要回忆了……不一定什么事情都要想起来的……"));
-        t3.AddDialog(new Dialog("小夫", "不，我感到她对我很重要……"));
-        t3.AddDialog(new Dialog("咨询师", "有时候该忘就忘记吧……也许想起来你会痛苦的"));
-        t3.AddDialog(new Dialog("小夫", "不。我清晰的记得她的存在，那一幕幕……"));
+        t3.AddDialog(new Dialog("小夫", "一定是有个人，给了我很多爱，带我走出这一切。", 16));
+        t3.AddDialog(new Dialog("小夫", "我好像记得她对我的意义，给予我的支持……", 16));
+        t3.AddDialog(new Dialog("小夫", "但她是谁？到底长什么样子……", 16));
+        t3.AddDialog(new Dialog("小夫", "我记不清了", 16));
+        t3.AddDialog(new Dialog("咨询师", "记不清就不要回忆了……不一定什么事情都要想起来的……", 16));
+        t3.AddDialog(new Dialog("小夫", "不，我感到她对我很重要……", 16));
+        t3.AddDialog(new Dialog("咨询师", "有时候该忘就忘记吧……也许想起来你会痛苦的", 16));
+        t3.AddDialog(new Dialog("小夫", "不。我清晰的记得她的存在，那一幕幕……", 16));
         dialogSequences.Add(t3);
 
 
@@ -200,18 +201,18 @@ public static class StoryData
 
         DialogSequence p6 = new DialogSequence(25, 26, GameState.Dialog);
         p6.AddDialog(new Dialog("小夫", "你的领带，我洗好晾干了，收在这里面。"));
-        p6.AddDialog(new Dialog("小日", "你好贴心……"));
-        p6.AddDialog(new Dialog("小日", "居然还帮我洗了。"));
-        p6.AddDialog(new Dialog("小日", "你也没那么不靠谱嘛……"));
+        p6.AddDialog(new Dialog("小日", "你好贴心……",17));
+        p6.AddDialog(new Dialog("小日", "居然还帮我洗了。", 18));
+        p6.AddDialog(new Dialog("小日", "你也没那么不靠谱嘛……", 18));
         dialogSequences.Add(p6);
 
         DialogSequence p7 = new DialogSequence(26, 27, GameState.SceneGame);
-        p7.AddDialog(new Dialog("小夫", "哈哈……"));
-        p7.AddDialog(new Dialog("小夫", "……那个，谢谢你。"));
-        p7.AddDialog(new Dialog("小日", "怎么突然说这个。"));
-        p7.AddDialog(new Dialog("小夫", "谢谢你愿意抱着善意对我"));
-        p7.AddDialog(new Dialog("小夫", "你也没传说的那么难相处嘛…"));
-        p7.AddDialog(new Dialog("小夫", "你这么厉害，又这么内敛。换谁都会不敢跟你交流的吧……"));
+        p7.AddDialog(new Dialog("小夫", "哈哈……", 18));
+        p7.AddDialog(new Dialog("小夫", "……那个，谢谢你。", 18));
+        p7.AddDialog(new Dialog("小日", "怎么突然说这个。", 18));
+        p7.AddDialog(new Dialog("小夫", "谢谢你愿意抱着善意对我", 18));
+        p7.AddDialog(new Dialog("小夫", "你也没传说的那么难相处嘛…", 18));
+        p7.AddDialog(new Dialog("小夫", "你这么厉害，又这么内敛。换谁都会不敢跟你交流的吧……", 18));
         dialogSequences.Add(p7);
 
 
@@ -431,7 +432,7 @@ public static class StoryData
         p18.AddDialog(new Dialog("小夫", "哈哈，一言为定。我肯定也会经常幸福的流泪的。"));
         dialogSequences.Add(p18);
 
-        DialogSequence p19 = new DialogSequence(39, 45, GameState.SceneGame);
+        DialogSequence p19 = new DialogSequence(39, 46, GameState.SceneGame);
         p19.AddDialog(new Dialog("小夫", "！！？"));
         p19.AddDialog(new Dialog("小夫", "！！！！！！！！！！！！"));
         dialogSequences.Add(p19);
@@ -516,86 +517,86 @@ public static class StoryData
 
         //高潮
         DialogSequence e1 = new DialogSequence(46, 47, GameState.SceneGame);
-        e1.AddDialog(new Dialog("小夫", "我再也不想回想那个时刻，但我无时无刻脑子里都在重复。"));
-        e1.AddDialog(new Dialog("小夫", "她就躺在我面前，全身惨白，比那晚月光照耀下还要白的刺眼。"));
-        e1.AddDialog(new Dialog("小夫", "她脸上插满了管子，连气管都被切开了。我跪在她面前，隔着玻璃，连碰她都是奢望。"));
-        e1.AddDialog(new Dialog("小夫", "我什么都做不了。"));
-        e1.AddDialog(new Dialog("小夫", "我睡不着。"));
-        e1.AddDialog(new Dialog("小夫", "我每天晚上都睡不着。"));
-        e1.AddDialog(new Dialog("小夫", "我一直在做噩梦。"));
-        e1.AddDialog(new Dialog("小夫", "无穷无尽的噩梦。"));
-        e1.AddDialog(new Dialog("小夫", "我知道胡思乱想没有用，可我一直在想。"));
-        e1.AddDialog(new Dialog("小夫", "如果我当初学了公共医学，阻止了非典的爆发。"));
-        e1.AddDialog(new Dialog("小夫", "如果我当时继续好好学化学，研制出了病毒的特效药。"));
-        e1.AddDialog(new Dialog("小夫", "如果我没有痴心妄想和她在一起，她能继续做她的学术天才。"));
-        e1.AddDialog(new Dialog("小夫", "如果我不跟她聊什么所谓高尚的理想，什么所谓高尚的道德追求。"));
-        e1.AddDialog(new Dialog("小夫", "甚至，如果我跟她聊天的那一晚，早点察觉到她的意图，劝她不要去做危险的事。"));
-        e1.AddDialog(new Dialog("小夫", "哪怕我陪她一起去。"));
-        e1.AddDialog(new Dialog("小夫", "我有那么多机会救她，但我什么都没做，我什么都做不了。"));
-        e1.AddDialog(new Dialog("小夫", "她救了我的人生，我却没能救她……"));
-        e1.AddDialog(new Dialog("小夫", "她本应该继续在大学校园里漫步，她本该继续在学术道路上大放光彩。"));
-        e1.AddDialog(new Dialog("小夫", "她不该早早的结束她的人生。"));
-        e1.AddDialog(new Dialog("小夫", "该死的人是我！"));
-        e1.AddDialog(new Dialog("小夫", "明明该死的人是我才对！"));
-        e1.AddDialog(new Dialog("小夫", "为什么我什么都没做，为什么我什么都做不了。"));
+        e1.AddDialog(new Dialog("小夫", "我再也不想回想那个时刻，但我无时无刻脑子里都在重复。",40));
+        e1.AddDialog(new Dialog("小夫", "她就躺在我面前，全身惨白，比那晚月光照耀下还要白的刺眼。", 40));
+        e1.AddDialog(new Dialog("小夫", "她脸上插满了管子，连气管都被切开了。我跪在她面前，隔着玻璃，连碰她都是奢望。", 40));
+        e1.AddDialog(new Dialog("小夫", "我什么都做不了。", 40));
+        e1.AddDialog(new Dialog("小夫", "我睡不着。", 40));
+        e1.AddDialog(new Dialog("小夫", "我每天晚上都睡不着。", 40));
+        e1.AddDialog(new Dialog("小夫", "我一直在做噩梦。", 40));
+        e1.AddDialog(new Dialog("小夫", "无穷无尽的噩梦。", 40));
+        e1.AddDialog(new Dialog("小夫", "我知道胡思乱想没有用，可我一直在想。", 40));
+        e1.AddDialog(new Dialog("小夫", "如果我当初学了公共医学，阻止了非典的爆发。", 40));
+        e1.AddDialog(new Dialog("小夫", "如果我当时继续好好学化学，研制出了病毒的特效药。", 40));
+        e1.AddDialog(new Dialog("小夫", "如果我没有痴心妄想和她在一起，她能继续做她的学术天才。", 40));
+        e1.AddDialog(new Dialog("小夫", "如果我不跟她聊什么所谓高尚的理想，什么所谓高尚的道德追求。", 40));
+        e1.AddDialog(new Dialog("小夫", "甚至，如果我跟她聊天的那一晚，早点察觉到她的意图，劝她不要去做危险的事。", 40));
+        e1.AddDialog(new Dialog("小夫", "哪怕我陪她一起去。", 41));
+        e1.AddDialog(new Dialog("小夫", "我有那么多机会救她，但我什么都没做，我什么都做不了。", 41));
+        e1.AddDialog(new Dialog("小夫", "她救了我的人生，我却没能救她……", 41));
+        e1.AddDialog(new Dialog("小夫", "她本应该继续在大学校园里漫步，她本该继续在学术道路上大放光彩。", 41));
+        e1.AddDialog(new Dialog("小夫", "她不该早早的结束她的人生。", 42));
+        e1.AddDialog(new Dialog("小夫", "该死的人是我！", 42));
+        e1.AddDialog(new Dialog("小夫", "明明该死的人是我才对！", 42));
+        e1.AddDialog(new Dialog("小夫", "为什么我什么都没做，为什么我什么都做不了。", 43));
         dialogSequences.Add(e1);
 
         DialogSequence e2 = new DialogSequence(47, 48, GameState.Dialog);
-        e2.AddDialog(new Dialog("小日", "不要伤害自己……"));
-        e2.AddDialog(new Dialog("小日", "你从来没有伤害过我。"));
-        e2.AddDialog(new Dialog("小日", "你什么都不欠我。"));
-        e2.AddDialog(new Dialog("小日", "一切都是我自己的选择。"));
-        e2.AddDialog(new Dialog("小日", "你拯救了我，让我相信世界上有善、有爱。"));
-        e2.AddDialog(new Dialog("小日", "你让我觉得世界值得期待，世界值得被爱。"));
-        e2.AddDialog(new Dialog("小日", "我才会想要把这种爱传递出去。"));
-        e2.AddDialog(new Dialog("小日", "你没有错，或许我也没有错，爱不会有错。"));
-        e2.AddDialog(new Dialog("小日", "……"));
-        e2.AddDialog(new Dialog("小日", "答应我最后一个请求好吗？"));
-        e2.AddDialog(new Dialog("小日", "照顾好自己。"));
+        e2.AddDialog(new Dialog("小日", "不要伤害自己……", 44));
+        e2.AddDialog(new Dialog("小日", "你从来没有伤害过我。", 44));
+        e2.AddDialog(new Dialog("小日", "你什么都不欠我。", 44));
+        e2.AddDialog(new Dialog("小日", "一切都是我自己的选择。", 44));
+        e2.AddDialog(new Dialog("小日", "你拯救了我，让我相信世界上有善、有爱。", 44));
+        e2.AddDialog(new Dialog("小日", "你让我觉得世界值得期待，世界值得被爱。", 44));
+        e2.AddDialog(new Dialog("小日", "我才会想要把这种爱传递出去。", 44));
+        e2.AddDialog(new Dialog("小日", "你没有错，或许我也没有错，爱不会有错。", 44));
+        e2.AddDialog(new Dialog("小日", "……", 44));
+        e2.AddDialog(new Dialog("小日", "答应我最后一个请求好吗？", 44));
+        e2.AddDialog(new Dialog("小日", "照顾好自己。", 44));
         dialogSequences.Add(e2);
 
         DialogSequence e3 = new DialogSequence(48, 49, GameState.Dialog);
-        e3.AddDialog(new Dialog("小夫", "……"));
-        e3.AddDialog(new Dialog("小夫", "你知道为什么我会来到这里吧。"));
-        e3.AddDialog(new Dialog("小夫", "你知道这意味着什么吧……"));
-        e3.AddDialog(new Dialog("小夫", "恕我不能答应你了。"));
-        e3.AddDialog(new Dialog("小夫", "我不能让你一个人待在这里。"));
-        e3.AddDialog(new Dialog("小夫", "我无法想象没有你的人生。"));
+        e3.AddDialog(new Dialog("小夫", "……", 44));
+        e3.AddDialog(new Dialog("小夫", "你知道为什么我会来到这里吧。", 44));
+        e3.AddDialog(new Dialog("小夫", "你知道这意味着什么吧……", 44));
+        e3.AddDialog(new Dialog("小夫", "恕我不能答应你了。", 44));
+        e3.AddDialog(new Dialog("小夫", "我不能让你一个人待在这里。", 44));
+        e3.AddDialog(new Dialog("小夫", "我无法想象没有你的人生。", 44));
         dialogSequences.Add(e3);
 
-        DialogSequence e4 = new DialogSequence(49, 50, GameState.MiniGame);
-        e4.AddDialog(new Dialog("小日", "……"));
-        e4.AddDialog(new Dialog("小日", "你还记得你把我的《古籍概要》还我的那天吗？"));
-        e4.AddDialog(new Dialog("小日", "我们一起聊历史学的意义。"));
-        e4.AddDialog(new Dialog("小夫", "我记得。"));
-        e4.AddDialog(new Dialog("小日", "历史学的意义，有人说是为后世提供行为指南，有人说是为了传承自己的思想主张，还有人说就是为了弥补失忆……"));
-        e4.AddDialog(new Dialog("小日", "我记得咱们那天没有达成共识，但有一点我们都认可。"));
-        e4.AddDialog(new Dialog("小日", "历史的进步，依靠的是文明火把的传递。"));
-        e4.AddDialog(new Dialog("小日", "对吗？"));
+        DialogSequence e4 = new DialogSequence(49, 50, GameState.SceneGame);
+        e4.AddDialog(new Dialog("小日", "……", 44));
+        e4.AddDialog(new Dialog("小日", "你还记得你把我的《古籍概要》还我的那天吗？", 44));
+        e4.AddDialog(new Dialog("小日", "我们一起聊历史学的意义。", 44));
+        e4.AddDialog(new Dialog("小夫", "我记得。", 44));
+        e4.AddDialog(new Dialog("小日", "历史学的意义，有人说是为后世提供行为指南，有人说是为了传承自己的思想主张，还有人说就是为了弥补失忆……", 44));
+        e4.AddDialog(new Dialog("小日", "我记得咱们那天没有达成共识，但有一点我们都认可。", 44));
+        e4.AddDialog(new Dialog("小日", "历史的进步，依靠的是文明火把的传递。", 44));
+        e4.AddDialog(new Dialog("小日", "对吗？", 44));
         dialogSequences.Add(e4);
 
 
-        DialogSequence e5 = new DialogSequence(50, 51, GameState.MiniGame);
-        e5.AddDialog(new Dialog("小日", "如果我们作为先行者都放弃了，那么后来的理想主义者靠谁去指引，靠谁去温暖呢？"));
-        e5.AddDialog(new Dialog("小日", "需要有人去讲述我们的故事。"));
-        e5.AddDialog(new Dialog("小日", "如今，你可以把我们吃过的苦搓成药丸，喂同病相怜的人吃下去，带他们离开泥淖。"));
-        e5.AddDialog(new Dialog("小日", "就像当初我们互相救赎那样。"));
-        e5.AddDialog(new Dialog("小日", "别放弃这次机会好吗？"));
+        DialogSequence e5 = new DialogSequence(50, 51, GameState.SceneGame);
+        e5.AddDialog(new Dialog("小日", "如果我们作为先行者都放弃了，那么后来的理想主义者靠谁去指引，靠谁去温暖呢？", 44));
+        e5.AddDialog(new Dialog("小日", "需要有人去讲述我们的故事。", 44));
+        e5.AddDialog(new Dialog("小日", "如今，你可以把我们吃过的苦搓成药丸，喂同病相怜的人吃下去，带他们离开泥淖。", 44));
+        e5.AddDialog(new Dialog("小日", "就像当初我们互相救赎那样。", 44));
+        e5.AddDialog(new Dialog("小日", "别放弃这次机会好吗？", 44));
 
-        e5.AddDialog(new Dialog("小夫", "……"));
-        e5.AddDialog(new Dialog("小夫", "没想到最后一次，又是你救了我……"));
-        e5.AddDialog(new Dialog("小夫", "对不起……"));
+        e5.AddDialog(new Dialog("小夫", "……", 44));
+        e5.AddDialog(new Dialog("小夫", "没想到最后一次，又是你救了我……", 44));
+        e5.AddDialog(new Dialog("小夫", "对不起……", 44));
 
-        e5.AddDialog(new Dialog("小日", "别这么说"));
-        e5.AddDialog(new Dialog("小日", "我见过太阳，我没有遗憾了。"));
+        e5.AddDialog(new Dialog("小日", "别这么说", 45));
+        e5.AddDialog(new Dialog("小日", "我见过太阳，我没有遗憾了。", 46));
 
-        e5.AddDialog(new Dialog("小日", "“但太阳不是我们的，我们要睡了。”"));
-        e5.AddDialog(new Dialog("小日", "一直走吧，走出这里，拥抱阳光。然后成为太阳。"));
-        e5.AddDialog(new Dialog("小日", "带着我的那份一起。"));
+        e5.AddDialog(new Dialog("小日", "“但太阳不是我们的，我们要睡了。”", 46));
+        e5.AddDialog(new Dialog("小日", "一直走吧，走出这里，拥抱阳光。然后成为太阳。", 46));
+        e5.AddDialog(new Dialog("小日", "带着我的那份一起。", 46));
 
-        e5.AddDialog(new Dialog("小夫", "再给我一点时间，就一点好吗？"));
-        e5.AddDialog(new Dialog("小夫", "抱抱我吧，最后一次。"));
-        e5.AddDialog(new Dialog("小夫", "我快醒了……"));
+        e5.AddDialog(new Dialog("小夫", "再给我一点时间，就一点好吗？", 46));
+        e5.AddDialog(new Dialog("小夫", "抱抱我吧，最后一次。", 46));
+        e5.AddDialog(new Dialog("小夫", "我快醒了……", 46));
         dialogSequences.Add(e5);
 
 

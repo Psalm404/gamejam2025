@@ -18,21 +18,29 @@ public class ThroughTimeSceneGame : SceneGameBase
     {
         if (flag == 0)
         {
+            flag = 1;
             DialogManager.GetInstance().isInSplitDialog = true;
             MainGameManager.GetInstance().StartDialogSequence(40);
-            flag = 1;
+            
         }
-        else if (flag == 2)
+        else if(flag == 2)
         {
-            DialogManager.GetInstance().isInSplitDialog = true;
-            MainGameManager.GetInstance().StartDialogSequence(45);
+            DialogManager.GetInstance().isInSplitDialog = false;
+            MainGameManager.GetInstance().StartDialogSequence(44);
             flag = 3;
         }
         else if (flag == 3)
         {
+            DialogManager.GetInstance().isInSplitDialog = true;
+            MainGameManager.GetInstance().StartDialogSequence(45);
+            flag = 4;
+        }
+        else if (flag == 4)
+        {
             DialogManager.GetInstance().isInSplitDialog = false;
             MainGameManager.GetInstance().SwitchState(GameState.SceneGame);
         }
+        
     }
 
     public void OnLeftButtonClick(int i) {
@@ -40,25 +48,21 @@ public class ThroughTimeSceneGame : SceneGameBase
         foreach (Button b in Left) {
             b.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
         }
-        Left[i].GetComponent<RectTransform>().localScale = new Vector3(1.2f, 1.2f, 1);
-        
+        Left[i].GetComponent<RectTransform>().localScale = new Vector3(1.1f, 1.1f, 1);
     }
 
     public void OnRightButtonClick(int i)
     {
         if (i == currentSelected)
         {
-            //²¥·Å¶¯»­ÏûÊ§
-            Left[i].gameObject.SetActive(false);
-            Right[i].gameObject.SetActive(false);
-            MainGameManager.GetInstance().StartDialogSequence(41 + i);
+            StartCoroutine(Fadeout(Left[i].gameObject));
+            StartCoroutine(Fadeout(Right[i].gameObject));
             currentSelected = -1;
             disappearCount++;
             if (disappearCount == 3) {
-                DialogManager.GetInstance().isInSplitDialog = false;
-                MainGameManager.GetInstance().StartDialogSequence(44);
                 flag = 2;
             }
+            MainGameManager.GetInstance().StartDialogSequence(41 + i);
         }
         else
         {
@@ -71,5 +75,19 @@ public class ThroughTimeSceneGame : SceneGameBase
         
     }
 
+    private IEnumerator Fadeout(GameObject o)
+    {
+      
+        float elapsedTime = 0.0f;
+        float duration = 2.0f;
 
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            float t = elapsedTime / duration;
+            o.GetComponent<Image>().color = new Color(1, 1, 1, Mathf.Lerp(1, 0, t));
+            yield return null;
+        }
+        o.SetActive(false);
+    }
 }

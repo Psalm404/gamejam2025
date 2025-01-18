@@ -36,7 +36,7 @@ public class DraggableBubble : MonoBehaviour, IPointerDownHandler, IDragHandler,
     {
         if (RectTransformUtility.ScreenPointToLocalPointInRectangle(transform.parent as RectTransform, eventData.position, eventData.pressEventCamera, out Vector2 localPoint))
         {
-            rectTransform.anchoredPosition = offset + localPoint;
+            rectTransform.anchoredPosition = localPoint;
         }
     }
 

@@ -262,7 +262,7 @@ public class DialogManager : MonoBehaviour
             {
                 DialogSplit currentDialog = (DialogSplit)currentDialogSequence.GetNextDialog();
                 if (dialogSplitUI != null)
-                {
+                {                
                     dialogSplitUI.SetDialog(currentDialog.GetCharacterName(),
                         currentDialog.GetDialogText(), currentDialog.GetCharacterNameRight(),
                         currentDialog.GetDialogTextRight(), currentDialog.GetDialogBackground());

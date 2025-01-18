@@ -29,6 +29,14 @@ public class MainMenuUI : MonoBehaviour
 
     public void StartGame()
     {
+        //test≈›≈›Ω· ¯
+        // SceneGameManager.GetInstance().SetCurrentSceneID(22);
+        // DialogManager.GetInstance().SetSequenceID(15);
+
+        //∏ﬂ≥±
+        SceneGameManager.GetInstance().SetCurrentSceneID(52);
+        DialogManager.GetInstance().SetSequenceID(39);
+
         UIManager.GetInstance().CloseMainMenu();
         MainGameManager.GetInstance().LoadGame();
     }

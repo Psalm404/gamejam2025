@@ -24,7 +24,15 @@ public class DialogSplitUI : MonoBehaviour
         this.characterNameRight.text = characterNameRight;
         dialogLeft.text = dialogTextLeft;
         dialogRight.text = dialogTextRight;
-        background.sprite = Resources.Load<Sprite>("Background/" + backgroundSpriteID);
+        if (backgroundSpriteID == 0)
+        {
+            background.color = new Color(1, 1, 1, 0);
+        }
+        else
+        {
+            background.color = new Color(1, 1, 1, 1);
+            background.sprite = Resources.Load<Sprite>("Background/" + backgroundSpriteID);
+        }
     }
 
     public void OnClick()

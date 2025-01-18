@@ -1,18 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class SelectBook : MonoBehaviour
+public class SelectThingGame : SceneGameBase
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public int TargetId;
+
+    [SerializeField]
+    private GameObject ChoicePanel;
+    [SerializeField]
+    private GameObject PaperButton;
+    [SerializeField]
+    private GameObject target;
+
+
+    public bool isSuccess(int id) {
+        if (id == TargetId)
+        {
+            ChoicePanel.SetActive(false);
+            target.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+            return true;            
+        }
+        else {
+            return false;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void ShowChoosePanel() {
+        ChoicePanel.SetActive(true);
+        PaperButton.GetComponent<Button>().interactable = false;
     }
 }
