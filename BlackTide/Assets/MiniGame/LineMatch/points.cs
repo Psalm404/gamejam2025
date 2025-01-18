@@ -264,5 +264,7 @@ public class ui_thread : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoin
         yield return new WaitForSeconds(1.5f);
         MiniGameManager.GetInstance().FinishMinigame("LineMatch");
     }
+
+
 }
 

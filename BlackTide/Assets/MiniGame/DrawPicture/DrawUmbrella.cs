@@ -301,7 +301,7 @@ public class OneStrokeUmbrella : MonoBehaviour, IPointerDownHandler, IDragHandle
     IEnumerator Pause()
     {
         yield return new WaitForSeconds(1.5f);
-        MiniGameManager.GetInstance().FinishMinigame("DrawUmbrella");
+        MiniGameManager.GetInstance().NextMinigame("DrawUmbrella");
     }
 }
 
