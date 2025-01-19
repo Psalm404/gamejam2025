@@ -111,5 +111,23 @@ public class MiniGameManager : MonoBehaviour
         MainGameManager.GetInstance().SwitchState(GameState.SceneGame);
 
     }
+    public void NextMinigame(string minigameName)
+    {
 
+
+        GameObject minigame = miniGames[currentGameID];
+        Debug.Log(minigame.name + "isfinished");
+        if (minigame != null)
+        {
+            minigame.SetActive(false);
+            currentGameID++;
+        }
+        else
+        {
+            Debug.LogWarning("minigame object not found in the scene." + minigameName);
+        }
+
+        MainGameManager.GetInstance().SwitchState(GameState.MiniGame);
+
+    }
 }

@@ -68,7 +68,7 @@ public static class StoryData
         s11.AddDialog(new Dialog("小夫", "快压下去……"));
         dialogSequences.Add(s11);
 
-        DialogSequence s12 = new DialogSequence(11, 12, GameState.MiniGame);
+        DialogSequence s12 = new DialogSequence(11, 12, GameState.SceneGame);
         s12.AddDialog(new Dialog("小夫", "(还是……压不住啊……"));
         dialogSequences.Add(s12);
 

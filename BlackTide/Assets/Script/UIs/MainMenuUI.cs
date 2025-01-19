@@ -29,13 +29,18 @@ public class MainMenuUI : MonoBehaviour
 
     public void StartGame()
     {
+        //test第一章点击前
+         SceneGameManager.GetInstance().SetCurrentSceneID(16);
+         DialogManager.GetInstance().SetSequenceID(8);
+        MiniGameManager.GetInstance().SetCurrentGameID(7);
+
         //test泡泡结束
         // SceneGameManager.GetInstance().SetCurrentSceneID(22);
         // DialogManager.GetInstance().SetSequenceID(15);
 
         //高潮
-        SceneGameManager.GetInstance().SetCurrentSceneID(52);
-        DialogManager.GetInstance().SetSequenceID(39);
+        //SceneGameManager.GetInstance().SetCurrentSceneID(52);
+        //DialogManager.GetInstance().SetSequenceID(39);
 
         UIManager.GetInstance().CloseMainMenu();
         MainGameManager.GetInstance().LoadGame();

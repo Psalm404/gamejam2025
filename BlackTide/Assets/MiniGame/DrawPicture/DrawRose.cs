@@ -325,7 +325,7 @@ public class OneStrokerose : MonoBehaviour, IPointerDownHandler, IDragHandler, I
     IEnumerator Pause()
     {
         yield return new WaitForSeconds(1.5f);
-        MiniGameManager.GetInstance().FinishMinigame("DrawRose");
+        MiniGameManager.GetInstance().NextMinigame("DrawRose");
     }
 }
 
