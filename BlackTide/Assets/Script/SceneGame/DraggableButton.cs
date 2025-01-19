@@ -22,7 +22,7 @@ public class DraggableButton : MonoBehaviour, IPointerDownHandler, IDragHandler,
     {
         rectTransform = GetComponent<RectTransform>();
         originalPosition = rectTransform.anchoredPosition;
-        cam = GameObject.Find("Main Camera").GetComponent<Camera>();
+        cam = GameObject.Find("MainCamera").GetComponent<Camera>();
     }
 
     public void OnPointerDown(PointerEventData eventData)

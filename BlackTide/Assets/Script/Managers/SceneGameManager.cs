@@ -31,7 +31,10 @@ public class SceneGameManager : MonoBehaviour
     public void Load() {
         sceneGames[0].SetActive(false);
         sceneGames[sceneID].SetActive(true);
-        sceneGames[sceneID].GetComponent<SceneGameBase>().StartPlay();
+        if (sceneGames[sceneID].GetComponent<SceneGameBase>() != null)
+        {
+            sceneGames[sceneID].GetComponent<SceneGameBase>().StartPlay();
+        }
     }
 
     public void MoveOn()
@@ -40,7 +43,9 @@ public class SceneGameManager : MonoBehaviour
         sceneID++;
         if (sceneID < sceneGames.Count) {
             sceneGames[sceneID].SetActive(true);
-            sceneGames[sceneID].GetComponent<SceneGameBase>().StartPlay();
+            if (sceneGames[sceneID].GetComponent<SceneGameBase>() != null) {
+                sceneGames[sceneID].GetComponent<SceneGameBase>().StartPlay();
+            }
         }
     }
 
