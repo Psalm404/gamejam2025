@@ -18,11 +18,13 @@ public class MainMenuUI : MonoBehaviour
     }
 
     public void OnNewGame() {
+        AudioManager.GetInstance().clickUI.Play();
         StartGame();
     }
 
     public void OnContinueGame()
     {
+        AudioManager.GetInstance().clickUI.Play();
         SaveManager.GetInstance().Load();
         StartGame();
     }
@@ -54,6 +56,7 @@ public class MainMenuUI : MonoBehaviour
 
     public void OnQuitGame()
     {
+        AudioManager.GetInstance().clickUI.Play();
         Application.Quit();
     }
 }

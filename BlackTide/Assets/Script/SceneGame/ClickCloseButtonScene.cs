@@ -33,6 +33,13 @@ public class ClickCloseButtonScene : SceneGameBase
     public void PlayAnimation() {
         rightBlackTide.gameObject.SetActive(true);
         rightBlackTide.SetTrigger("Broken");
-         //“Ù–ß£¨∆∆¡—
+        AudioManager.GetInstance().waterWoosh.Play();
+        StartCoroutine(PlayAudioAfterDelay(1f));
+    }
+
+    IEnumerator PlayAudioAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        AudioManager.GetInstance().glassCrash.Play();
     }
 }

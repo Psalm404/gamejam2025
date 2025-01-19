@@ -12,6 +12,7 @@ public class Bubble : MonoBehaviour
     private GameObject text;
 
     public void OnClick() {
+        AudioManager.GetInstance().bubbleCrash2.Play();
         bubbleClickGameManager.ClickBubble(GetComponent<Image>());
         text.SetActive(false);
     }

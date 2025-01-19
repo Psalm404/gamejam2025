@@ -45,8 +45,8 @@ public class AudioManager : MonoBehaviour
     public AudioSource warmMusic;
     public AudioSource scissorCut;
     public AudioSource smile;
-
-
+    public AudioSource coffeeBGM;
+    public AudioSource starBGM;
 
     private void Awake()
     {

@@ -23,7 +23,7 @@ public class Scene_1 : SceneGameBase
 
     public void OnBottleCoverClick() {
         bottleCoverAni.SetTrigger("Click");
-        //AudioManager.GetInstance().xxx.play();
+        AudioManager.GetInstance().uncorkBottle.Play();
         View2.SetActive(true);
         OnScreenSeparate();
     }
@@ -37,12 +37,15 @@ public class Scene_1 : SceneGameBase
     public void OnPhoneClick()
     {
         phoneAni.gameObject.SetActive(false);
+        AudioManager.GetInstance().phoneRing.Stop();
+        AudioManager.GetInstance().answerPhone.Play();
         MainGameManager.GetInstance().StartDialogSequence(0);
     }
 
     public void PhoneCall()
     {
         phoneAni.SetTrigger("Call");
+        AudioManager.GetInstance().phoneRing.Play();
     }
 
 

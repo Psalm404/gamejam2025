@@ -61,6 +61,7 @@ public class BubbleClickGame : SceneGameBase
                 Button tempB = b;
                 b.onClick.AddListener(() => OnThoughtBubbleClick(tempB));
             }
+            AudioManager.GetInstance().heartBeat.Play();
         }
         else if (state == 2) {
             Paper.gameObject.SetActive(true);
@@ -125,6 +126,7 @@ public class BubbleClickGame : SceneGameBase
     }
 
     public void ClickBubble(Image i) {
+        AudioManager.GetInstance().bubbleCrash2.Play();
         StartCoroutine(BubbleBrokenAnimation(i));
         BubbleClickCount++;
         if (BubbleClickCount == 9) {
@@ -152,15 +154,19 @@ public class BubbleClickGame : SceneGameBase
     {
         heartClickCount++;
         if (heartClickCount == 1) {
+            AudioManager.GetInstance().heartBeat.Stop();
+            AudioManager.GetInstance().heartSwell.Play();
             heart.GetComponent<Animator>().enabled = false;
             heart.GetComponent<Image>().sprite = Resources.Load<Sprite>("Level1/h2");
         }
         else if (heartClickCount == 2)
         {
+            AudioManager.GetInstance().heartToBubble.Play();
             heart.GetComponent<Image>().sprite = Resources.Load<Sprite>("Level1/h3");
         }
         else if (heartClickCount == 3)
         {
+            AudioManager.GetInstance().bubbleCrash2.Play();
             StartCoroutine(HeartBrokenAnimation(heart.GetComponent<Image>()));
             state = 1;           
         }
@@ -230,6 +236,9 @@ public class BubbleClickGame : SceneGameBase
         ToInactive.SetActive(false);
         if (ToActive != null) {
             ToActive.SetActive(true);
+            if (ToActive == Thought_3) {
+                AudioManager.GetInstance().laugh.Play();
+            }
         }
     }
 

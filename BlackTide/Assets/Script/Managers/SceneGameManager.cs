@@ -35,6 +35,31 @@ public class SceneGameManager : MonoBehaviour
         {
             sceneGames[sceneID].GetComponent<SceneGameBase>().StartPlay();
         }
+        if (sceneID == 18)
+        {
+            AudioManager.GetInstance().sinkInWater.Play();
+        }else if (sceneID == 21) {//µÚÒ»·ù
+            AudioManager.GetInstance().summer.Play();
+        }
+        else if (sceneID == 30)//¿§·ÈºÈ¾Æ
+        {
+            AudioManager.GetInstance().summer.Stop();
+            AudioManager.GetInstance().coffeeBGM.Play();
+        }
+        else if (sceneID == 36)//3Ò¹Íí
+        {
+            AudioManager.GetInstance().coffeeBGM.Stop();
+            AudioManager.GetInstance().nightSound.Play();
+        }
+        else if (sceneID == 43)//4ÐÇÐÇ
+        {
+            AudioManager.GetInstance().nightSound.Stop();
+            AudioManager.GetInstance().starBGM.Play();
+        }
+        else if (sceneID == 49)//µÚÎå·ù
+        {
+            AudioManager.GetInstance().starBGM.Stop();
+        }
     }
 
     public void MoveOn()
@@ -45,6 +70,31 @@ public class SceneGameManager : MonoBehaviour
             sceneGames[sceneID].SetActive(true);
             if (sceneGames[sceneID].GetComponent<SceneGameBase>() != null) {
                 sceneGames[sceneID].GetComponent<SceneGameBase>().StartPlay();
+            }
+            if (sceneID == 18) {
+                AudioManager.GetInstance().sinkInWater.Play();
+            }else if (sceneID == 21)
+            {
+                AudioManager.GetInstance().summer.Play();
+            }
+            else if (sceneID == 30)//¿§·ÈºÈ¾Æ
+            {
+                AudioManager.GetInstance().summer.Stop();
+                AudioManager.GetInstance().coffeeBGM.Play();
+            }
+            else if (sceneID == 36)//3Ò¹Íí
+            {
+                AudioManager.GetInstance().coffeeBGM.Stop();
+                AudioManager.GetInstance().nightSound.Play();
+            }
+            else if (sceneID == 43)//4ÐÇÐÇ
+            {
+                AudioManager.GetInstance().nightSound.Stop();
+                AudioManager.GetInstance().starBGM.Play();
+            }
+            else if (sceneID == 49)//µÚÎå·ù
+            {
+                AudioManager.GetInstance().starBGM.Stop();
             }
         }
     }
