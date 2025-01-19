@@ -80,7 +80,7 @@ public class BubbleClickGame : SceneGameBase
     public void OnThoughtBubbleClick(Button b) {
         thoughtBubbleCount++;
         b.gameObject.transform.GetChild(0).gameObject.SetActive(false);
-
+        AudioManager.GetInstance().bubbleCrash2.Play();
         StartCoroutine(BubbleBrokenAnimation(b.GetComponent<Image>()));
 
         if (state == 4) {

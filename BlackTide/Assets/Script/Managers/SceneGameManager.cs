@@ -38,7 +38,7 @@ public class SceneGameManager : MonoBehaviour
         if (sceneID == 18)
         {
             AudioManager.GetInstance().sinkInWater.Play();
-        }else if (sceneID == 21) {//µÚÒ»·ù
+        }else if (sceneID == 24) {//µÚÒ»·ù
             AudioManager.GetInstance().summer.Play();
         }
         else if (sceneID == 30)//¿§·ÈºÈ¾Æ
@@ -73,11 +73,11 @@ public class SceneGameManager : MonoBehaviour
             }
             if (sceneID == 18) {
                 AudioManager.GetInstance().sinkInWater.Play();
-            }else if (sceneID == 21)
+            }else if (sceneID == 24)
             {
                 AudioManager.GetInstance().summer.Play();
             }
-            else if (sceneID == 30)//¿§·ÈºÈ¾Æ
+            else if (sceneID == 30)//ºÈ¾Æ
             {
                 AudioManager.GetInstance().summer.Stop();
                 AudioManager.GetInstance().coffeeBGM.Play();
