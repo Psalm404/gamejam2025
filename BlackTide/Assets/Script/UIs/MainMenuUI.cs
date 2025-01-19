@@ -41,12 +41,18 @@ public class MainMenuUI : MonoBehaviour
         //  DialogManager.GetInstance().SetSequenceID(15);
         // MiniGameManager.GetInstance().SetCurrentGameID(8);
 
-        
+
 
         //test拍立得前过渡
         //  SceneGameManager.GetInstance().SetCurrentSceneID(35);
         // DialogManager.GetInstance().SetSequenceID(28);
         // MiniGameManager.GetInstance().SetCurrentGameID(12);
+
+
+        //跨时空
+        SceneGameManager.GetInstance().SetCurrentSceneID(52);
+        DialogManager.GetInstance().SetSequenceID(39);
+        MiniGameManager.GetInstance().SetCurrentGameID(13);
 
         //高潮
         //SceneGameManager.GetInstance().SetCurrentSceneID(54);

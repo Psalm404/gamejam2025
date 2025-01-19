@@ -55,14 +55,13 @@ public class ThroughTimeSceneGame : SceneGameBase
     {
         if (i == currentSelected)
         {
-            StartCoroutine(Fadeout(Left[i].gameObject));
+            StartCoroutine(Fadeout(Left[i].gameObject, i));
             StartCoroutine(Fadeout(Right[i].gameObject));
             currentSelected = -1;
             disappearCount++;
             if (disappearCount == 3) {
                 flag = 2;
             }
-            MainGameManager.GetInstance().StartDialogSequence(41 + i);
         }
         else
         {
@@ -75,18 +74,29 @@ public class ThroughTimeSceneGame : SceneGameBase
         
     }
 
+   
+    float frameInterval = 0.1f;
+    private IEnumerator Fadeout(GameObject o,int id)
+    {
+        int i = 0;
+        while (i < 6)
+        {
+            i++;
+            o.GetComponent<Image>().sprite = Resources.Load<Sprite>("ThroughTimeAni/" + i);
+            yield return new WaitForSeconds(frameInterval);
+        }
+        o.SetActive(false);
+        MainGameManager.GetInstance().StartDialogSequence(41 + id);
+    }
+
     private IEnumerator Fadeout(GameObject o)
     {
-      
-        float elapsedTime = 0.0f;
-        float duration = 2.0f;
-
-        while (elapsedTime < duration)
+        int i = 0;
+        while (i < 6)
         {
-            elapsedTime += Time.deltaTime;
-            float t = elapsedTime / duration;
-            o.GetComponent<Image>().color = new Color(1, 1, 1, Mathf.Lerp(1, 0, t));
-            yield return null;
+            i++;
+            o.GetComponent<Image>().sprite = Resources.Load<Sprite>("ThroughTimeAni/" + i);
+            yield return new WaitForSeconds(frameInterval);
         }
         o.SetActive(false);
     }
