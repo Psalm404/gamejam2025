@@ -86,6 +86,10 @@ public class DialogSequence //中间没有任何其他交互的一组对话
             return null;
         }
     }
+
+    public void ResetCurrent() {
+        current = -1;
+    }
 }
 
 public class Dialog {
@@ -216,6 +220,7 @@ public class DialogManager : MonoBehaviour
         currentSequenceID = dialogSequenceID;
         currentDialogSequence = dialogSequences[dialogSequenceID];
         currentDialogSequenceSize = currentDialogSequence.GetSize();
+        currentDialogSequence.ResetCurrent();
         if (currentDialogSequence.GetNextSequenceID() != -1)
         {
             nextDialogSequenceID = currentDialogSequence.GetNextSequenceID();
@@ -230,6 +235,7 @@ public class DialogManager : MonoBehaviour
             currentSequenceID = nextDialogSequenceID;
             currentDialogSequence = dialogSequences[nextDialogSequenceID];
             currentDialogSequenceSize = currentDialogSequence.GetSize();
+            currentDialogSequence.ResetCurrent();
             if (currentDialogSequence.GetNextSequenceID() != -1) {
                 nextDialogSequenceID = currentDialogSequence.GetNextSequenceID();
             }
