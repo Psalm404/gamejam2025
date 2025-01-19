@@ -42,7 +42,7 @@ public class MainMenuUI : MonoBehaviour
        //  MiniGameManager.GetInstance().SetCurrentGameID(8);
 
         //test拍立得前过渡
-        // SceneGameManager.GetInstance().SetCurrentSceneID(35);
+       //  SceneGameManager.GetInstance().SetCurrentSceneID(35);
         // DialogManager.GetInstance().SetSequenceID(28);
         // MiniGameManager.GetInstance().SetCurrentGameID(12);
 

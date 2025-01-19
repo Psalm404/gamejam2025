@@ -252,42 +252,42 @@ public static class StoryData
         dialogSequences.Add(p9);
 
         DialogSequence p10 = new DialogSequence(30, 31, GameState.SceneGame);
-        p10.AddDialog(new Dialog("小日", "……对不起对不起。", 28));
-        p10.AddDialog(new Dialog("小日", "明明是我自己可以干好的……", 28));
-        p10.AddDialog(new Dialog("小夫", "别这么说……", 28));
-        p10.AddDialog(new Dialog("小日", "（低头）我习惯了一切都是一个人。", 29));
-        p10.AddDialog(new Dialog("小日", "从小到大我一直是自己做事。", 29));
-        p10.AddDialog(new Dialog("小日", "爸妈都忙，也都让我学会独立。", 29));
-        p10.AddDialog(new Dialog("小日", "我记得十岁那年，爸爸妈妈忙工作，一直没有回来。", 29));
-        p10.AddDialog(new Dialog("小日", "……", 29));
-        p10.AddDialog(new Dialog("小日", "（伸手）看到我食指的这道口子了吗……", 30));
+        p10.AddDialog(new Dialog("小日", "……对不起对不起。", 25));
+        p10.AddDialog(new Dialog("小日", "明明是我自己可以干好的……", 25));
+        p10.AddDialog(new Dialog("小夫", "别这么说……", 25));
+        p10.AddDialog(new Dialog("小日", "（低头）我习惯了一切都是一个人。", 25));
+        p10.AddDialog(new Dialog("小日", "从小到大我一直是自己做事。", 25));
+        p10.AddDialog(new Dialog("小日", "爸妈都忙，也都让我学会独立。", 25));
+        p10.AddDialog(new Dialog("小日", "我记得十岁那年，爸爸妈妈忙工作，一直没有回来。", 25));
+        p10.AddDialog(new Dialog("小日", "……", 25));
+        p10.AddDialog(new Dialog("小日", "（伸手）看到我食指的这道口子了吗……", 26));
         dialogSequences.Add(p10);
 
         DialogSequence p11 = new DialogSequence(31, 32, GameState.Dialog);
-        p11.AddDialog(new Dialog("小日", "我把自己变成了刺猬，不让人靠近。", 31));
-        p11.AddDialog(new Dialog("小日", "因为我不想……", 31));
-        p11.AddDialog(new Dialog("小日", "但你，你很可靠……", 31));
-        p11.AddDialog(new Dialog("小日", "……", 31));
-        p11.AddDialog(new Dialog("小日", "你还记得我给你的那张票吗？", 31));
-        p11.AddDialog(new Dialog("小夫", "我随身保存着。", 32));
-        p11.AddDialog(new Dialog("小日", "雨伞是遮蔽风雨，玫瑰你明白，太阳……", 33));
-        p11.AddDialog(new Dialog("小日", "那是我藏在心底的愿望。", 33));
-        p11.AddDialog(new Dialog("小日", "我叫小日，但我的生活里没有太阳。", 33));
-        p11.AddDialog(new Dialog("小日", "你知道为什么我要排曹禺的《日出》吗？", 33));
-        p11.AddDialog(new Dialog("小日", "你知道为什么我要演陈白露吗？", 33));
-        p11.AddDialog(new Dialog("小日", "我和她一样陷于泥淖无法自拔，我们都期待着太阳能照耀我们……", 33));
+        p11.AddDialog(new Dialog("小日", "我把自己变成了刺猬，不让人靠近。", 25));
+        p11.AddDialog(new Dialog("小日", "因为我不想……", 25));
+        p11.AddDialog(new Dialog("小日", "但你，你很可靠……", 25));
+        p11.AddDialog(new Dialog("小日", "……", 25));
+        p11.AddDialog(new Dialog("小日", "你还记得我给你的那张票吗？", 25));
+        p11.AddDialog(new Dialog("小夫", "我随身保存着。", 25));
+        p11.AddDialog(new Dialog("小日", "雨伞是遮蔽风雨，玫瑰你明白，太阳……", 25));
+        p11.AddDialog(new Dialog("小日", "那是我藏在心底的愿望。", 25));
+        p11.AddDialog(new Dialog("小日", "我叫小日，但我的生活里没有太阳。", 25));
+        p11.AddDialog(new Dialog("小日", "你知道为什么我要排曹禺的《日出》吗？", 25));
+        p11.AddDialog(new Dialog("小日", "你知道为什么我要演陈白露吗？", 25));
+        p11.AddDialog(new Dialog("小日", "我和她一样陷于泥淖无法自拔，我们都期待着太阳能照耀我们……", 24));
         dialogSequences.Add(p11);
 
         DialogSequence p12 = new DialogSequence(32, 33, GameState.SceneGame);
-        p12.AddDialog(new Dialog("小日", "我喝多了，今晚的话你会忘的对吧。", 34));
-        p12.AddDialog(new Dialog("小夫", "当然，我会尊重你的秘密。", 34));
-        p12.AddDialog(new Dialog("小日", "最后对一下台词吧……然后回去睡觉。", 34));
-        p12.AddDialog(new Dialog("小日", "太阳升起来了，黑暗留在后面。", 34));
-        p12.AddDialog(new Dialog("小日", "……", 34));
-        p12.AddDialog(new Dialog("小日", "但太阳不是我们的，我们要睡了。", 34));
-        p12.AddDialog(new Dialog("小夫", "我来的时候觉察屋子里很黑。", 34));
-        p12.AddDialog(new Dialog("小夫", "我走到窗前把幕帷拉开。", 34));
-        p12.AddDialog(new Dialog("小夫", "阳光射满了一屋子。", 34));
+        p12.AddDialog(new Dialog("小日", "我喝多了，今晚的话你会忘的对吧。", 25));
+        p12.AddDialog(new Dialog("小夫", "当然，我会尊重你的秘密。", 25));
+        p12.AddDialog(new Dialog("小日", "最后对一下台词吧……然后回去睡觉。", 25));
+        p12.AddDialog(new Dialog("小日", "太阳升起来了，黑暗留在后面。", 25));
+        p12.AddDialog(new Dialog("小日", "……", 25));
+        p12.AddDialog(new Dialog("小日", "但太阳不是我们的，我们要睡了。", 25));
+        p12.AddDialog(new Dialog("小夫", "我来的时候觉察屋子里很黑。", 25));
+        p12.AddDialog(new Dialog("小夫", "我走到窗前把幕帷拉开。", 25));
+        p12.AddDialog(new Dialog("小夫", "阳光射满了一屋子。", 25));
         dialogSequences.Add(p12);
 
 
@@ -323,7 +323,7 @@ public static class StoryData
         p15.AddDialog(new Dialog("小日", "你善良、温柔，有独立之精神自由之思想。"));
         p15.AddDialog(new Dialog("小日", "我觉得你缺一个机缘，你以后一定会大有作为。"));
         p15.AddDialog(new Dialog("小日", "更重要的是……"));
-        p15.AddDialog(new Dialog("小日", "你也是我的依靠。"));
+        p15.AddDialog(new Dialog("小日", "你也是我的依靠。",21));
         dialogSequences.Add(p15);
 
         //星空对话
@@ -401,29 +401,29 @@ public static class StoryData
 
 
         DialogSequence p16 = new DialogSequence(36, 37, GameState.Dialog);
-        p16.AddDialog(new Dialog("小夫", "谢谢你选择我。", 20));
-        p16.AddDialog(new Dialog("小日", "别这么说。", 20));
-        p16.AddDialog(new Dialog("小日", "我们是互相救赎。", 20));
-        p16.AddDialog(new Dialog("小日", "你帮了我很多。", 20));
-        p16.AddDialog(new Dialog("小日", "我之前像刺猬一样，从来不敢对人打开心房。", 20));
-        p16.AddDialog(new Dialog("小日", "但遇到你之后，我愿意破一次例。", 20));
-        p16.AddDialog(new Dialog("小日", "初中的时候，我的班主任告诉我：", 20));
-        p16.AddDialog(new Dialog("小日", "“相信有爱，一生行善。”", 20));
-        p16.AddDialog(new Dialog("小日", "我一直践行这句话。", 20));
-        p16.AddDialog(new Dialog("小日", "……差点就不相信了……", 20));
-        p16.AddDialog(new Dialog("小日", "还好有你。", 20));
-        p16.AddDialog(new Dialog("小日", "因为你，我愿意继续如此。", 20));
-        p16.AddDialog(new Dialog("小夫", "今晚月色真美。", 20));
-        p16.AddDialog(new Dialog("小夫", "月光照在你身上，跟你白色的裙子交相辉映，好像洁白的婚纱。", 20));
-        p16.AddDialog(new Dialog("小夫", "你穿洁白的婚纱肯定特别美。", 20));
+        p16.AddDialog(new Dialog("小夫", "谢谢你选择我。", 21));
+        p16.AddDialog(new Dialog("小日", "别这么说。", 21));
+        p16.AddDialog(new Dialog("小日", "我们是互相救赎。", 21));
+        p16.AddDialog(new Dialog("小日", "你帮了我很多。", 21));
+        p16.AddDialog(new Dialog("小日", "我之前像刺猬一样，从来不敢对人打开心房。", 21));
+        p16.AddDialog(new Dialog("小日", "但遇到你之后，我愿意破一次例。", 21));
+        p16.AddDialog(new Dialog("小日", "初中的时候，我的班主任告诉我：", 21));
+        p16.AddDialog(new Dialog("小日", "“相信有爱，一生行善。”", 21));
+        p16.AddDialog(new Dialog("小日", "我一直践行这句话。", 21));
+        p16.AddDialog(new Dialog("小日", "……差点就不相信了……", 21));
+        p16.AddDialog(new Dialog("小日", "还好有你。", 21));
+        p16.AddDialog(new Dialog("小日", "因为你，我愿意继续如此。", 21));
+        p16.AddDialog(new Dialog("小夫", "今晚月色真美。", 21));
+        p16.AddDialog(new Dialog("小夫", "月光照在你身上，跟你白色的裙子交相辉映，好像洁白的婚纱。", 21));
+        p16.AddDialog(new Dialog("小夫", "你穿洁白的婚纱肯定特别美。", 22));
         dialogSequences.Add(p16);
 
         DialogSequence p17 = new DialogSequence(37, 38, GameState.SceneGame);
-        p17.AddDialog(new Dialog("小夫", "你怎么了，你还好吗？", 21));
-        p17.AddDialog(new Dialog("小夫", "是不是我太冒失了，对不起对不起，我不是有意让你不高兴的。", 21));
-        p17.AddDialog(new Dialog("小日", "不……是太高兴了。", 21));
-        p17.AddDialog(new Dialog("小日", "给我擦擦眼泪好吗。", 21));
-        p17.AddDialog(new Dialog("小夫", "好，你等一下。", 21));
+        p17.AddDialog(new Dialog("小夫", "你怎么了，你还好吗？", 22));
+        p17.AddDialog(new Dialog("小夫", "是不是我太冒失了，对不起对不起，我不是有意让你不高兴的。", 22));
+        p17.AddDialog(new Dialog("小日", "不……是太高兴了。", 22));
+        p17.AddDialog(new Dialog("小日", "给我擦擦眼泪好吗。", 22));
+        p17.AddDialog(new Dialog("小夫", "好，你等一下。", 22));
         dialogSequences.Add(p17);
 
 
