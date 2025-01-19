@@ -80,6 +80,7 @@ public class BubbleClickGame : SceneGameBase
     public void OnThoughtBubbleClick(Button b) {
         thoughtBubbleCount++;
         b.gameObject.transform.GetChild(0).gameObject.SetActive(false);
+        b.interactable = false;
         AudioManager.GetInstance().bubbleCrash2.Play();
         StartCoroutine(BubbleBrokenAnimation(b.GetComponent<Image>()));
 
@@ -213,6 +214,8 @@ public class BubbleClickGame : SceneGameBase
             yield return null;
         }
         Paper.gameObject.SetActive(false);
+        FullBox.gameObject.SetActive(false);
+        BubblePanelAni.gameObject.SetActive(false);
         MainGameManager.GetInstance().StartDialogSequence(202);
         state = 3;
     }
